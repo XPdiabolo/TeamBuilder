@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
         backgroundColor: "orange"
     },
     header:{
-        flex: 0.8,
+        height: 100,
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: '#4B4B4B',
