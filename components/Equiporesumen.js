@@ -18,7 +18,7 @@ const UserProfile = ({user}) =>{
 const Header =()=>{
     return(
         <View style={styles.header}>
-            <Text style={styles.headertitle}>Teams</Text>
+            <Text style={styles.headertitle}>Teams wola</Text>
         </View>
     );
 };
