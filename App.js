@@ -82,5 +82,6 @@ export default function App() {
       //<Pokedex />
       //<ResTeam user={equipo} />
       //<PokemonStats user={charizarde} />
+      //Amunt valencia otro rollo eono
   );
 };
