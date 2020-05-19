@@ -78,6 +78,7 @@ export default function App() {
   return (
       <UserProfile user={charizardo} />
       //Esto funciona no, si
+      //Modo altoke activado
       //<Pokedex />
       //<ResTeam user={equipo} />
       //<PokemonStats user={charizarde} />
