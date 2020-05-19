@@ -77,6 +77,7 @@ const equipo = {
 export default function App() {
   return (
       <UserProfile user={charizardo} />
+      //Esto funciona
       //<Pokedex />
       //<ResTeam user={equipo} />
       //<PokemonStats user={charizarde} />
