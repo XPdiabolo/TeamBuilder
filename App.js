@@ -1,6 +1,7 @@
 import React from 'react';
 import UserProfile from "./components/UserProfile.js";
-import PokemonStats from "./components/StatsPokeTeam.js"
+import PokemonStats from "./components/StatsPokeTeam.js";
+import EquipoResumen from "./components/Equiporesumen.js";
 import ResTeam from "./components/ResTeam.js";
 import Pokedex from "./components/Pokedex.js";
 //import { StyleSheet, Text, View } from 'react-native';
@@ -76,13 +77,10 @@ const equipo = {
 
 export default function App() {
   return (
-      <UserProfile user={charizardo} />
-      //Esto funciona no, si
-      //Modo altoke activado
-      // lets gooo
+      //<UserProfile user={charizardo} />
+      <EquipoResumen />
       //<Pokedex />
       //<ResTeam user={equipo} />
       //<PokemonStats user={charizarde} />
-      //Amunt valencia otro rollo eono
   );
 };
