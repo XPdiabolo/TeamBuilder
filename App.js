@@ -2,6 +2,7 @@ import React from 'react';
 import UserProfile from "./components/UserProfile.js";
 import PokemonStats from "./components/StatsPokeTeam.js"
 import ResTeam from "./components/ResTeam.js";
+import Pokedex from "./components/Pokedex.js";
 //import { StyleSheet, Text, View } from 'react-native';
 
 const charizardo = {
@@ -75,7 +76,8 @@ const equipo = {
 
 export default function App() {
   return (
-      <UserProfile user={charizardo} />
+      //<UserProfile user={charizardo} />
+      <Pokedex />
       //<ResTeam user={equipo} />
       //<PokemonStats user={charizarde} />
   );
