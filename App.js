@@ -6,6 +6,7 @@ import ResTeam from "./components/ResTeam.js";
 import Pokedex from "./components/Pokedex.js";
 import Footer from "./components/Footer.js";
 import Header from "./components/Header.js";
+import PokedexIcon from "./assets/icn_pokedex.svg";
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
@@ -119,6 +120,10 @@ const PoketeaM =()=>{
   );
 };
 
+const PokedexIcono = ( {color, size}) => (
+    <PokedexIcon size={size} color={color} />
+);
+
 export default function App() {
   return (
     <View style={styles.container}>
@@ -137,6 +142,7 @@ export default function App() {
         <Tab.Screen
           name="Pokedex"
           component={Pokedex}
+          navigationOptions={{ tabBarIcon: PokedexIcono.PokedexIcon }}
         />
         <Tab.Screen
           name="Team"
