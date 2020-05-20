@@ -107,6 +107,18 @@ const equipo = {
 
 const Tab = createBottomTabNavigator();
 
+const UserprofilE =()=>{
+  return(
+    <UserProfile user={charizardo} />
+  );
+};
+
+const PoketeaM =()=>{
+  return(
+    <Poketeam user={equipo} />
+  );
+};
+
 export default function App() {
   return (
     <View style={styles.container}>
@@ -119,7 +131,7 @@ export default function App() {
       <Tab.Navigator initialRouteName="Pokedex" screenOptions={{}}>
         <Tab.Screen
           name="Poke"
-          component={UserProfile}
+          component={UserprofilE}
         />
         <Tab.Screen
           name="Pokedex"
@@ -127,7 +139,7 @@ export default function App() {
         />
         <Tab.Screen
           name="Team"
-          component={Poketeam}
+          component={PoketeaM}
         />
       </Tab.Navigator>
     </NavigationContainer>

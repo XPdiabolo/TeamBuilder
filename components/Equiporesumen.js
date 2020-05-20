@@ -32,15 +32,15 @@ const Pokemons =({user})=>{
                 <View style={styles.pokamios}>
                     <View style={styles.grup1}>
 
-                        <Image source={{ uri : user.slot1.avatar }}  style={[styles.sprite, {flex: 0.8}]}/>
-                        <Image source={{ uri : user.slot2.avatar }}  style={[styles.sprite, {flex: 0.8}]}/>
-                        <Image source={{ uri : user.slot3.avatar }}  style={[styles.sprite, {flex: 0.8}]}/>
+                        <Image source={{ uri : user.slot1.avatar }}  style={[styles.sprite]}/>
+                        <Image source={{ uri : user.slot2.avatar }}  style={[styles.sprite]}/>
+                        <Image source={{ uri : user.slot3.avatar }}  style={[styles.sprite]}/>
                         
                     </View>
 
                     
 
-                    <View style={styles.grup1text}>
+                    <View style={styles.grup1}>
 
                         <Text style={[styles.pokename, {flex: 0.8}]}>{user.slot1.name}</Text>
                         <Text style={[styles.pokename, {flex: 0.8}]}>{user.slot2.name}</Text>
@@ -49,14 +49,14 @@ const Pokemons =({user})=>{
                     </View>
 
 
-                    <View style={styles.grup2}>
-                        <Image source={{ uri : user.slot4.avatar }}  style={[styles.sprite, {flex: 0.8}]}/>                        
-                        <Image source={{ uri : user.slot5.avatar }}  style={[styles.sprite, {flex: 0.8}]}/>
-                        <Image source={{ uri : user.slot6.avatar }}  style={[styles.sprite, {flex: 0.8}]}/>
+                    <View style={styles.grup1}>
+                        <Image source={{ uri : user.slot4.avatar }}  style={[styles.sprite]}/>                        
+                        <Image source={{ uri : user.slot5.avatar }}  style={[styles.sprite]}/>
+                        <Image source={{ uri : user.slot6.avatar }}  style={[styles.sprite]}/>
                         
                     </View>
 
-                     <View style={styles.grup2text}>
+                     <View style={styles.grup1}>
 
                         <Text style={[styles.pokename, {flex: 0.8}]}>{user.slot4.name}</Text>
                         <Text style={[styles.pokename, {flex: 0.8}]}>{user.slot5.name}</Text>
@@ -119,17 +119,15 @@ const styles = StyleSheet.create({
         alignItems: "center",        
         flexDirection: "column",
     },
-    grup1:{        
+    grup1:{ 
+        flex: 1,
+        width: "100%",       
         flexDirection: "row",
+        //alignItems: "center",
+        justifyContent: "center"
 
     },
     grup1text:{
-        flexDirection: "row",
-    },
-    grup2:{
-        flexDirection: "row",
-    },
-    grup2text:{
         flexDirection: "row",
     },
     header:{
@@ -226,6 +224,7 @@ const styles = StyleSheet.create({
     sprite:{
         height: 90,
         width: 75,
+        flex: 1
     },
     measures:{
         flexDirection: 'column',
