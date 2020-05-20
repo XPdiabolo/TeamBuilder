@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, FlatList, ImageBackground, ScrollView } from 'react-native';
 
 const Header =()=>{
   return(
@@ -27,12 +27,12 @@ const renderItem = ({ item }) => {
 
 export default function Pokedex(){
   return(
-       <View style={styles.container}>
+       <ImageBackground style={styles.container} source={require("../assets/background-pdx.png")}>
           <FlatList
           data={generateNumbers(100)}
           renderItem={renderItem}
           />
-      </View>
+      </ImageBackground>
   );
 }
 
@@ -53,8 +53,10 @@ headertitle:{
     paddingTop: 25,
 },
   container:{
+    width: "100vw",
+    height: "200vw",
       //flex: 1,
-      backgroundColor: "#ef503b",
+      //backgroundColor: "#ef503b",
       alignItems: "center",
       //justifyContent: "center",
       //marginTop: 30,
