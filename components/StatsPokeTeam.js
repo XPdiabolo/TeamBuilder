@@ -108,12 +108,7 @@ const Stats =({user})=>{
     return(
         <View style={styles.stats}>
             <Text style={styles.titles}>Stats</Text>
-            <Text style={styles.content2}>HP: </Text>
-            <Slider 
-            step={1}
-            maximumValue={100}
-            value= {50}
-            />
+            <Text style={styles.content2}>HP: {user.hp}</Text>
             <Text style={styles.content2}>Attack: {user.attack}</Text>
             <Text style={styles.content2}>Defense: {user.defense}</Text>
             <Text style={styles.content2}>Sp. Attack: {user.spatk}</Text>
