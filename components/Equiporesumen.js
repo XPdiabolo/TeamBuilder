@@ -1,15 +1,15 @@
 import React from 'react';
-import { StyleSheet, Image, Text, View, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Image, Text, View, ImageBackground, TouchableWithoutFeedback } from 'react-native';
 
 
 
 const PokeTeam = ({user}) =>{
     return(
-        <View style={styles.page}>
+        <ImageBackground style={styles.page} source={require("../assets/background-team.png")}>
             <Pokemons user={user} />
             <Weakness user={user} />
             <Stats user={user} />
-        </View>
+        </ImageBackground>
     );
 };
 
