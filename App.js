@@ -1,12 +1,17 @@
 import React from 'react';
 import UserProfile from "./components/UserProfile.js";
 import PokemonStats from "./components/StatsPokeTeam.js";
-import EquipoResumen from "./components/Equiporesumen.js";
+import Poketeam from "./components/Equiporesumen.js";
 import ResTeam from "./components/ResTeam.js";
 import Pokedex from "./components/Pokedex.js";
 import Footer from "./components/Footer.js";
 import Header from "./components/Header.js";
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import "react-native-gesture-handler";
+import { NavigationContainer } from "@react-navigation/native";
+
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
 
 const charizardo = {
   name:"Charizard",
@@ -77,7 +82,7 @@ const equipo = {
   slot6: abomasnow,
 };
 
-export default function App() {
+/*export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.tbar}>
@@ -98,7 +103,30 @@ export default function App() {
       //<ResTeam user={equipo} />
       //<EquipoResumen user={equipo} />
   );
-};
+}; */
+
+const Tab = createBottomTabNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator initialRouteName="Pokedex" screenOptions={{}}>
+        <Tab.Screen
+          name="Poke"
+          component={UserProfile}
+        />
+        <Tab.Screen
+          name="Pokedex"
+          component={Pokedex}
+        />
+        <Tab.Screen
+          name="Team"
+          component={Poketeam}
+        />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
 
 const styles = StyleSheet.create ({
   container: {
@@ -116,4 +144,4 @@ bbar:{
   width: "100vw"
 }
 
-})
+}) 

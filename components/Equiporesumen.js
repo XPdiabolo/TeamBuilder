@@ -3,7 +3,7 @@ import { StyleSheet, Image, Text, View, TouchableWithoutFeedback } from 'react-n
 
 
 
-const UserProfile = ({user}) =>{
+const PokeTeam = ({user}) =>{
     return(
         <View style={styles.page}>
             <Pokemons user={user} />
@@ -105,7 +105,7 @@ const Weakness =({user})=>{
     );
 };
 
-export default UserProfile
+export default PokeTeam
 
 const styles = StyleSheet.create({
     page:{
