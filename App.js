@@ -78,8 +78,8 @@ const equipo = {
 export default function App() {
   return (
       //<UserProfile user={charizardo} />
-      <EquipoResumen />
-      //<Pokedex />
+      //<EquipoResumen />
+      <Pokedex />
       //<ResTeam user={equipo} />
       //<PokemonStats user={charizarde} />
   );
