@@ -126,13 +126,14 @@ export default function App() {
       <Header/>
     </View>
     
-
     <NavigationContainer>
       <Tab.Navigator initialRouteName="Pokedex" screenOptions={{}}>
+      
         <Tab.Screen
           name="Poke"
           component={UserprofilE}
         />
+        
         <Tab.Screen
           name="Pokedex"
           component={Pokedex}
@@ -143,6 +144,7 @@ export default function App() {
         />
       </Tab.Navigator>
     </NavigationContainer>
+
     
     </View>
   );
@@ -157,7 +159,7 @@ const styles = StyleSheet.create ({
     height: 100
   },
 main:{
-  height: 1
+  height: "100%"
 },
 bbar:{
   height: 80,

@@ -40,7 +40,7 @@ const Pokemons =({user})=>{
 
                     
 
-                    <View style={styles.grup1}>
+                    <View style={styles.grup1text}>
 
                         <Text style={[styles.pokename, {flex: 0.8}]}>{user.slot1.name}</Text>
                         <Text style={[styles.pokename, {flex: 0.8}]}>{user.slot2.name}</Text>
@@ -56,7 +56,7 @@ const Pokemons =({user})=>{
                         
                     </View>
 
-                     <View style={styles.grup1}>
+                     <View style={styles.grup1text}>
 
                         <Text style={[styles.pokename, {flex: 0.8}]}>{user.slot4.name}</Text>
                         <Text style={[styles.pokename, {flex: 0.8}]}>{user.slot5.name}</Text>
@@ -129,6 +129,8 @@ const styles = StyleSheet.create({
     },
     grup1text:{
         flexDirection: "row",
+        width: "95%",
+        justifyContent: "center"
     },
     header:{
         flex: 0.8,
