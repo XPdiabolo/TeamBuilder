@@ -131,7 +131,7 @@ export default function App() {
       <Header/>
     </View>
     
-    <NavigationContainer>
+    <NavigationContainer style={styles.navContainer}>
       <Tab.Navigator initialRouteName="Pokedex" screenOptions={{}}>
       
         <Tab.Screen
@@ -170,6 +170,9 @@ main:{
 bbar:{
   height: 80,
   width: "100vw"
+},
+navContainer:{
+  flex: 1,
 }
 
 }) 
