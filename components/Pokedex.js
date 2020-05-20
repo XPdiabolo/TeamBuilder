@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, ScrollView } from 'react-native';
 
 const Header =()=>{
   return(
@@ -27,34 +27,14 @@ const renderItem = ({ item }) => {
 
 export default function Pokedex(){
   return(
-      <View>
-          <Header/>
        <View style={styles.container}>
           <FlatList
           data={generateNumbers(100)}
           renderItem={renderItem}
           />
-        <Footer/>
-      </View>
       </View>
   );
 }
-
-const Footer =()=>{
-    return(
-        <View style={{flexDirection:'row'}}>
-            <View style={[styles.footer, {backgroundColor:'green'}]}>
-                <Text>Team</Text>
-            </View>
-            <View style={[styles.footer, {backgroundColor:'blue'}]}>
-                <Text>Pokedex</Text>
-            </View>
-            <View style={[styles.footer, {backgroundColor:'red'}]}>
-               <Text>Details</Text>
-            </View>
-        </View>
-    );
-};
 
 
 const styles = StyleSheet.create({
@@ -73,7 +53,7 @@ headertitle:{
     paddingTop: 25,
 },
   container:{
-      flex: 1,
+      //flex: 1,
       backgroundColor: "#ef503b",
       alignItems: "center",
       //justifyContent: "center",

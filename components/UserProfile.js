@@ -6,20 +6,10 @@ import { StyleSheet, Image, Text, View, TouchableWithoutFeedback } from 'react-n
 const UserProfile = ({user}) =>{
     return(
         <View style={styles.page}>
-            <Header />
             <Name user={user} />
             <Profile user={user} />
             <Description user={user} />
             <Stats user={user} />
-            <Footer />
-        </View>
-    );
-};
-
-const Header =()=>{
-    return(
-        <View style={styles.header}>
-            <Text style={styles.headertitle}>Pokédex</Text>
         </View>
     );
 };
@@ -92,27 +82,12 @@ const Stats =({user})=>{
     );
 };
 
-const Footer =()=>{
-    return(
-        <View style={{flexDirection:'row'}}>
-            <View style={[styles.footer, {backgroundColor:'green'}]}>
-                <Text>Team</Text>
-            </View>
-            <View style={[styles.footer, {backgroundColor:'blue'}]}>
-                <Text>Pokedex</Text>
-            </View>
-            <View style={[styles.footer, {backgroundColor:'red'}]}>
-               <Text>Details</Text>
-            </View>
-        </View>
-    );
-};
-
 export default UserProfile
 
 const styles = StyleSheet.create({
     page:{
         flex: 1,
+        height: "90vh",
         backgroundColor: "orange"
     },
     header:{

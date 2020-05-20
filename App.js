@@ -4,7 +4,9 @@ import PokemonStats from "./components/StatsPokeTeam.js";
 import EquipoResumen from "./components/Equiporesumen.js";
 import ResTeam from "./components/ResTeam.js";
 import Pokedex from "./components/Pokedex.js";
-//import { StyleSheet, Text, View } from 'react-native';
+import Footer from "./components/Footer.js";
+import Header from "./components/Header.js";
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 
 const charizardo = {
   name:"Charizard",
@@ -77,10 +79,41 @@ const equipo = {
 
 export default function App() {
   return (
+    <View style={styles.container}>
+      <View style={styles.tbar}>
+        <Header/>
+      </View>
+
+      <ScrollView style={styles.main}>
+      <PokemonStats user={charizarde} />  
+      </ScrollView>
+      
+      <View style={styles.bbar}>
+        <Footer/>
+      </View>
+
+    </View>
       //<UserProfile user={charizardo} />
-      <EquipoResumen />
       //<Pokedex />
       //<ResTeam user={equipo} />
-      //<PokemonStats user={charizarde} />
+      //<EquipoResumen user={equipo} />
   );
 };
+
+const styles = StyleSheet.create ({
+  container: {
+    flex: 1
+  },
+  tbar:{
+    width: "100vw",
+    height: 100
+  },
+main:{
+  height: 1
+},
+bbar:{
+  height: 80,
+  width: "100vw"
+}
+
+})
