@@ -106,14 +106,19 @@ const Nature = ({user}) =>{
 
 const Stats =({user})=>{
     return(
-        <View style={styles.stats}>
-            <Text style={styles.titles}>Stats</Text>
-            <Text style={styles.content2}>HP: {user.hp}</Text>
-            <Text style={styles.content2}>Attack: {user.attack}</Text>
-            <Text style={styles.content2}>Defense: {user.defense}</Text>
-            <Text style={styles.content2}>Sp. Attack: {user.spatk}</Text>
-            <Text style={styles.content2}>Sp. Defense: {user.spdef}</Text>
-            <Text style={styles.content2}>Speed: {user.speed}</Text>
+        <View style={styles.description}>
+            <Text>HP</Text>
+            <input type="range" min="1" max="255" value="user.hp" id="myrange" class="slider"></input>
+            <Text>Attack</Text>
+            <input type="range" min="1" max="255" value="user.attack" id="myrange" class="slider"></input>
+            <Text>Spe. Attack</Text>
+            <input type="range" min="1" max="255" value="user.defense" id="myrange" class="slider"></input>
+            <Text>Defense</Text>
+            <input type="range" min="1" max="255" value="user.spatk" id="myrange" class="slider"></input>
+            <Text>Spe. Defense</Text>
+            <input type="range" min="1" max="255" value="user.spdef" id="myrange" class="slider"></input>
+            <Text>Speed</Text>
+            <input type="range" min="1" max="255" value="user.speed" id="myrange" class="slider"></input>
         </View>
     );
 };
