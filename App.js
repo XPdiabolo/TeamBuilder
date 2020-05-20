@@ -109,6 +109,12 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
+    <View style={styles.container}>
+    <View style={styles.tbar}>
+      <Header/>
+    </View>
+    
+
     <NavigationContainer>
       <Tab.Navigator initialRouteName="Pokedex" screenOptions={{}}>
         <Tab.Screen
@@ -125,6 +131,8 @@ export default function App() {
         />
       </Tab.Navigator>
     </NavigationContainer>
+    
+    </View>
   );
 }
 
