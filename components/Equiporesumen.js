@@ -5,7 +5,7 @@ import { StyleSheet, Image, Text, View, ImageBackground, TouchableWithoutFeedbac
 
 const PokeTeam = ({user}) =>{
     return(
-        <ImageBackground style={styles.page} source={require("../assets/background-team.png")}>
+        <ImageBackground style={styles.page} source={require("../assets/background_team.png")}>
             <Pokemons user={user} />
             <Weakness user={user} />
             <Stats user={user} />
