@@ -1,81 +1,95 @@
-import React from 'react';
-import { StyleSheet, Text, View, FlatList, ImageBackground, ScrollView } from 'react-native';
+import React, { useContext, useEffect } from 'react';
+import { StyleSheet, Text, View, FlatList, ImageBackground, ScrollView, ActivityIndicator } from 'react-native';
+import { PokemonsProvider, PokemonsContext } from '../models/Pokemonsmodel';
+import { observer } from 'mobx-react';
 
-const Header =()=>{
-  return(
-      <View style={styles.header}>
-          <Text style={styles.headertitle}>Pokédex</Text>
+const GeneratePokemons = observer( => {  // (length) entre los dos =
+  // let numbers = [];
+  //for (let i = 0; i < length; i++) {
+  //  numbers.push({ number: i+1 });
+  //}
+  //return numbers;
+  const pokemons = useContext(PokemonsContext);
+
+  useEffect(() => {
+    pokemons.loadPokemon();
+
+  }, []);
+
+  if (pokemons.pokemon == null) {
+    return (
+      <View>
+        <ActivityIndicator size="large" />
       </View>
-  );
-};
-
-
-
-const generateNumbers = (length) => {
-  let numbers = [];
-  for (let i = 0; i < length; i++) {
-    numbers.push({ number: i+1 });
-  }
-  return numbers;
-}
+    )
+  };
+  return(
+    <View>
+      <Text>{JSON.stringify(pokemons.pokemon)}</Text>
+    </View>
+  )
+});
 
 const renderItem = ({ item }) => {
   return <View style={styles.box}>
     <Text style={styles.pokedexName}>Nº {item.number}         Pokémon Name</Text>
   </View>
-}
+};
 
-export default function Pokedex(){
-  return(
-       <ImageBackground style={styles.container} source={require("../assets/background-pdx.png")}>
-          <FlatList
-          data={generateNumbers(100)}
-          renderItem={renderItem}
-          />
+export default function Pokedex() {
+  return (
+    <PokemonsProvider>
+      <ImageBackground style={styles.container} source={require("../assets/background-pdx.png")}>
+        <GeneratePokemons/>
       </ImageBackground>
+    </PokemonsProvider>
   );
-}
+};
 
+//<FlatList esto iba entre imagebaxkgrounds
+//          data={generateNumbers()}
+//          renderItem={renderItem}
+//        />
 
 const styles = StyleSheet.create({
 
-  header:{
+  header: {
     height: 100,
     //flex: 0.8,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: '#4B4B4B',
-},
-headertitle:{
+  },
+  headertitle: {
     color: "white",
     fontWeight: "bold",
     fontSize: 33,
     paddingTop: 25,
-},
-  container:{
+  },
+  container: {
     width: "100vw",
     height: "200vw",
-      //flex: 1,
-      //backgroundColor: "#ef503b",
-      alignItems: "center",
-      //justifyContent: "center",
-      //marginTop: 30,
+    //flex: 1,
+    //backgroundColor: "#ef503b",
+    alignItems: "center",
+    //justifyContent: "center",
+    //marginTop: 30,
   },
-footer:{
-  flex: 1,
-  height: 80,
-  backgroundColor: 'pink'
-},
-  box:{
+  footer: {
+    flex: 1,
+    height: 80,
+    backgroundColor: 'pink'
+  },
+  box: {
     backgroundColor: "white",
-    width:"90%",
+    width: "90%",
     margin: 15,
     marginLeft: 20,
     padding: 10,
     paddingLeft: 60,
     borderRadius: 25,
   },
-  pokedexName:{
+  pokedexName: {
     fontSize: 18,
   },
 });

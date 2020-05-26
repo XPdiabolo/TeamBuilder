@@ -12,6 +12,7 @@ import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { PokemonsProvider } from './models/Pokemonsmodel.js';
 
 
 const charizardo = {
@@ -126,6 +127,7 @@ const PokedexIcono = ( {color, size}) => (
 
 export default function App() {
   return (
+    <PokemonsProvider>
     <View style={styles.container}>
     <View style={styles.tbar}>
       <Header/>
@@ -153,6 +155,7 @@ export default function App() {
 
     
     </View>
+    </PokemonsProvider>
   );
 }
 
