@@ -90,18 +90,8 @@ const Measures = ({user}) => {
 const Stats =({user})=>{
     return(
         <View style={styles.description}>
-            <Text>HP</Text>
-            <input type="range" min="1" max="255" value="50" id="myrange" class="slider"></input>
-            <Text>Attack</Text>
-            <input type="range" min="1" max="255" value="50" id="myrange" class="slider"></input>
-            <Text>Spe. Attack</Text>
-            <input type="range" min="1" max="255" value="50" id="myrange" class="slider"></input>
-            <Text>Defense</Text>
-            <input type="range" min="1" max="255" value="50" id="myrange" class="slider"></input>
-            <Text>Spe. Defense</Text>
-            <input type="range" min="1" max="255" value="50" id="myrange" class="slider"></input>
-            <Text>Speed</Text>
-            <input type="range" min="1" max="255" value="50" id="myrange" class="slider"></input>
+            <Text>Mi pana miguel</Text>
+            
         </View>
     );
 };
