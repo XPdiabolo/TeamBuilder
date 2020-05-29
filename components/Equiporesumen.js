@@ -90,7 +90,7 @@ const Measures = ({user}) => {
 const Stats =({user})=>{
     return(
         <View style={styles.description}>
-            <Text>Mi pana miguel</Text>
+            <Text>Mi pana</Text>
             
         </View>
     );
