@@ -25,14 +25,17 @@ const GeneratePokemons = observer(() => {  // (length) entre los dos =
   };
   return(
     <View>
-      <Text>{JSON.stringify(pokemons.pokemon)}</Text>
+    <FlatList esto iba entre imagebaxkgrounds
+          data={pokemons.pokemon}
+          renderItem={renderItem}
+        />
     </View>
   )
 });
 
 const renderItem = ({ item }) => {
   return <View style={styles.box}>
-    <Text style={styles.pokedexName}>Nº {item.number}         Pokémon Name</Text>
+    <Text style={styles.pokedexName}>Nº {item.name}</Text>
   </View>
 };
 
