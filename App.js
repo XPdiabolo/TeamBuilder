@@ -132,6 +132,7 @@ export default function App() {
     <View style={styles.tbar}>
       <Header/>
     </View>
+
     
     <NavigationContainer style={styles.navContainer}>
       <Tab.Navigator initialRouteName="Pokedex" screenOptions={{}}>
@@ -152,6 +153,7 @@ export default function App() {
         />
       </Tab.Navigator>
     </NavigationContainer>
+  
 
     
     </View>
@@ -168,7 +170,7 @@ const styles = StyleSheet.create ({
     height: 100
   },
 main:{
-  height: "100%"
+  flow: 1
 },
 bbar:{
   height: 80,

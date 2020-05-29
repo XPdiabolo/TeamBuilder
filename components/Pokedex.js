@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
-import { StyleSheet, Text, View, FlatList, ImageBackground, ScrollView, ActivityIndicator } from 'react-native';
+import { StyleSheet, Image, Text, View, FlatList, ImageBackground, ScrollView, ActivityIndicator } from 'react-native';
 import { PokemonsProvider, PokemonsContext } from '../models/Pokemonsmodel';
+import { DetailsProvider, DetailsContext } from '../models/DetailsModel';
 import { observer } from 'mobx-react';
 
 const GeneratePokemons = observer(() => {  // (length) entre los dos =
@@ -13,7 +14,6 @@ const GeneratePokemons = observer(() => {  // (length) entre los dos =
 
   useEffect(() => {
     pokemons.loadPokemon();
-
   }, []);
 
   if (pokemons.pokemon == null) {
@@ -25,7 +25,7 @@ const GeneratePokemons = observer(() => {  // (length) entre los dos =
   };
   return(
     <View>
-    <FlatList esto iba entre imagebaxkgrounds
+    <FlatList
           data={pokemons.pokemon}
           renderItem={renderItem}
         />
@@ -33,18 +33,51 @@ const GeneratePokemons = observer(() => {  // (length) entre los dos =
   )
 });
 
-const renderItem = ({ item }) => {
+
+const RenderSprites = observer(() =>{
+  
+  const details = useContext(DetailsContext);
+
+  useEffect(() => {
+    details.loadDetails();
+  }, []);
+
+  if (details.detail == null) {
+    return (
+      <View>
+        <ActivityIndicator size="large" />
+      </View>
+    )
+  };
+  return(
+    <View>
+      <Image source={details.detail.front_default}  style={styles.sprite}/>
+    </View>
+  
+    //<Text>{JSON.stringify(details.detail.front_default)}</Text>
+  )
+
+});
+
+const renderItem = ({ item }) => { 
   return <View style={styles.box}>
-    <Text style={styles.pokedexName}>Nº {item.name}</Text>
+    <Text style={styles.pokedexName}>Nº {item.name}  <RenderSprites/> </Text>
+    
   </View>
 };
 
 export default function Pokedex() {
   return (
     <PokemonsProvider>
+      <DetailsProvider>
       <ImageBackground style={styles.container} source={require("../assets/background-pdx.png")}>
+      <ScrollView style={styles.scroll}>
+      
         <GeneratePokemons/>
+      
+      </ScrollView>
       </ImageBackground>
+      </DetailsProvider>
     </PokemonsProvider>
   );
 };
@@ -94,5 +127,12 @@ const styles = StyleSheet.create({
   },
   pokedexName: {
     fontSize: 18,
+  },
+  scroll:{
+    flow: 1
+  },
+  sprite:{
+    width: 96,
+    height: 96,
   },
 });
