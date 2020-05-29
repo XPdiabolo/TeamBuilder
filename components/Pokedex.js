@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, FlatList, ImageBackground, ScrollView, Activity
 import { PokemonsProvider, PokemonsContext } from '../models/Pokemonsmodel';
 import { observer } from 'mobx-react';
 
-const GeneratePokemons = observer( => {  // (length) entre los dos =
+const GeneratePokemons = observer(() => {  // (length) entre los dos =
   // let numbers = [];
   //for (let i = 0; i < length; i++) {
   //  numbers.push({ number: i+1 });
