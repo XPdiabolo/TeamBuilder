@@ -34,12 +34,12 @@ const GeneratePokemons = observer(() => {  // (length) entre los dos =
 });
 
 
-const RenderSprites = observer(() =>{
-  
+const RenderSprites = observer(({pokemonname}) =>{
+
   const details = useContext(DetailsContext);
 
   useEffect(() => {
-    details.loadDetails();
+    details.loadDetails(pokemonname);
   }, []);
 
   if (details.detail == null) {
@@ -60,8 +60,9 @@ const RenderSprites = observer(() =>{
 });
 
 const renderItem = ({ item }) => { 
+  const scriptimgname = item.name;
   return <View style={styles.box}>
-    <Text style={styles.pokedexName}>Nº {item.name}  <RenderSprites/> </Text>
+    <Text style={styles.pokedexName}>Nº {item.name}  <RenderSprites pokemonname={scriptimgname}/> </Text>
     
   </View>
 };
