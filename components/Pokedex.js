@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     marginBottom: 90
   },
   sprite:{
-    width: 96,
-    height: 96,
+    width: 50,
+    height: 50,
   },
 });
