@@ -1,16 +1,41 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 //import Slider from '@react-native-community/slider';
-import { StyleSheet, Image, Text, View, Slider} from 'react-native';
+import { StyleSheet, Image, Text, View, ActivityIndicator } from 'react-native';
+import { DetailsProvider, DetailsContext } from '../models/DetailsModel';
+import { observer } from 'mobx-react';
 
 
+const RenderDetails = observer(() =>{
 
-const PokemonStats = ({user}) =>{
+    const details = useContext(DetailsContext);
+    const pokemonexemple = "rayquaza";
+  
+    useEffect(() => {
+      details.loadDetails(pokemonexemple);
+    }, []);  
+  
+    if (details.detail == null) {
+      return (
+        <View>
+          <ActivityIndicator size="large" />
+        </View>
+      )
+    }else{
+        return(
+            <PokemonStats user={details.detail}/>
+        )
+    };
+  });
+
+const PokemonStats = (user) =>{
     return(
+        <DetailsProvider>
         <View style={styles.page}>
             <Profile user={user} />
             <Items user={user} />
             <Stats user={user} />
         </View>
+        </DetailsProvider>
     );
 };
 
@@ -19,7 +44,7 @@ const PokemonStats = ({user}) =>{
 const Profile =({user})=>{
     return(
         <View style={styles.profile}>
-            <Image source={{ uri : user.avatar }}  style={styles.sprite}/>
+            <Image source={"https://img.pokemondb.net/sprites/x-y/normal/"+ user.user.species.name +".png"}  style={styles.sprite}/>
             <Movements user={user} />
         </View>
     );
@@ -33,19 +58,19 @@ const Movements = ({user}) => {
             </View>
 
             <View style={[styles.movedet2]}>
-                <Text style={styles.content}>{user.move1}</Text>
+                <Text style={styles.content}>{user.user.moves[0].move.name}</Text>
             </View>
 
             <View style={styles.movedet2}>
-                <Text style={styles.content}>{user.move2}</Text>
+                <Text style={styles.content}>{user.user.moves[1].move.name}</Text>
             </View>
 
             <View style={styles.movedet2}>
-                <Text style={styles.content}>{user.move3}</Text>
+                <Text style={styles.content}>{user.user.moves[2].move.name}</Text>
             </View>
 
             <View style={styles.movedet2}>
-                <Text style={styles.content}>{user.move4}</Text>
+                <Text style={styles.content}>{user.user.moves[3].move.name}</Text>
             </View>
         </View>
   
@@ -84,7 +109,7 @@ const Ability = ({user}) =>{
         </View>
 
         <View style={[styles.movedet2]}>
-            <Text style={styles.content}>{user.ability}</Text>
+            <Text style={styles.content}>{user.user.abilities[0].ability.name}</Text>
         </View>
     </View>
     );
@@ -98,27 +123,29 @@ const Nature = ({user}) =>{
         </View>
 
         <View style={[styles.movedet2]}>
-            <Text style={styles.content}>{user.nature}</Text>
+            <Text style={styles.content}>Strong</Text> 
         </View>
     </View>
     );
 };
 
+
+
 const Stats =({user})=>{
     return(
         <View style={styles.stats}>
             <Text style={styles.titles}>Stats</Text>
-            <Text style={styles.content2}>HP: {user.hp}</Text>
-            <Text style={styles.content2}>Attack: {user.attack}</Text>
-            <Text style={styles.content2}>Defense: {user.defense}</Text>
-            <Text style={styles.content2}>Sp. Attack: {user.spatk}</Text>
-            <Text style={styles.content2}>Sp. Defense: {user.spdef}</Text>
-            <Text style={styles.content2}>Speed: {user.speed}</Text>
+            <Text style={styles.content2}>Speed: {user.user.stats[0].base_stat}</Text>
+            <Text style={styles.content2}>Sp. Defense: {user.user.stats[1].base_stat}</Text>
+            <Text style={styles.content2}>SP. Attack: {user.user.stats[2].base_stat}</Text>
+            <Text style={styles.content2}>Defense: {user.user.stats[3].base_stat}</Text>
+            <Text style={styles.content2}>Attack: {user.user.stats[4].base_stat}</Text>
+            <Text style={styles.content2}>Hp: {user.user.stats[5].base_stat}</Text>
         </View>
     );
 };
 
-export default PokemonStats
+export default RenderDetails
 
 const styles = StyleSheet.create({
     page:{

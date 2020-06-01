@@ -111,7 +111,7 @@ const Tab = createBottomTabNavigator();
 
 const UserprofilE =()=>{
   return(
-    <PokemonStats user={charizarde} />
+    <PokemonStats />
   );
 };
 

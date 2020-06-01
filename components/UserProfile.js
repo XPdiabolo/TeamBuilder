@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Image, Text, View, TouchableWithoutFeedback } from 'react-native';
-import { DetailsProvider, DetailsContext } from '../models/DetailsModel';
 
 
 
