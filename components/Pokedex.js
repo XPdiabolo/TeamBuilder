@@ -4,6 +4,7 @@ import { PokemonsProvider, PokemonsContext } from '../models/Pokemonsmodel';
 import { DetailsProvider, DetailsContext } from '../models/DetailsModel';
 import { observer } from 'mobx-react';
 
+
 const GeneratePokemons = observer(() => {  // (length) entre los dos =
   // let numbers = [];
   //for (let i = 0; i < length; i++) {
@@ -33,10 +34,11 @@ const GeneratePokemons = observer(() => {  // (length) entre los dos =
   )
 });
 
-
+//esta funcion al final no se usa
 const RenderSprites = observer(({pokemonname}) =>{
 
   const details = useContext(DetailsContext);
+  const namesarray = [];
 
   useEffect(() => {
     details.loadDetails(pokemonname);
@@ -48,24 +50,30 @@ const RenderSprites = observer(({pokemonname}) =>{
         <ActivityIndicator size="large" />
       </View>
     )
+  }else{
+    namesarray.push(details.detail.front_default);
+    const lastname = namesarray[namesarray.length - 1];
+    return(
+      <View>
+        <Image source={namesarray[namesarray.length - 1]}  style={styles.sprite}/>
+      </View>
+      )
   };
-  return(
-    <View>
-      <Image source={details.detail.front_default}  style={styles.sprite}/>
-    </View>
-  
-    //<Text>{JSON.stringify(details.detail.front_default)}</Text>
-  )
-
 });
 
-const renderItem = ({ item }) => { 
-  const scriptimgname = item.name;
+const renderItem = ({ item }) => {
+  const url = "https://img.pokemondb.net/sprites/x-y/normal/";
+  const number = item.url.substr(34, 37);
+  const numberdef = number.slice(0,-1);
+
   return <View style={styles.box}>
-    <Text style={styles.pokedexName}>Nº {item.name}  <RenderSprites pokemonname={scriptimgname}/> </Text>
+    <Text style={styles.pokedexName}>Nº {numberdef} {item.name.toUpperCase(1)}  <Image source={url+item.name+".png"}  style={styles.sprite}/> </Text>
     
   </View>
 };
+//Pokemon database https://pokemondb.net/sprites/bulbasaur
+//https://pokemondb.net/pokedex/all
+
 
 export default function Pokedex() {
   return (
@@ -130,7 +138,8 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   scroll:{
-    flow: 1
+    flow: 1,
+    marginBottom: 90
   },
   sprite:{
     width: 96,
