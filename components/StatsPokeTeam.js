@@ -152,7 +152,7 @@ export default RenderDetails
 const styles = StyleSheet.create({
     page:{
         flex: 1,
-        height: "90vh",
+        
         backgroundColor: "orange"
     },
     header:{
@@ -205,7 +205,7 @@ const styles = StyleSheet.create({
         paddingBottom: 5,
         fontWeight: 'bold',
         paddingTop: 5,
-        width: '100%',
+        flex: 1,
         backgroundColor: '#E0E0E0',
         color: 'black',
         fontSize: 20,
@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         margin: 15,    
         borderRadius: 10,
-        height: '90%'
+        flex: 1,
     },
     item:{
         flexDirection: 'column',
@@ -240,13 +240,12 @@ const styles = StyleSheet.create({
         alignItems: "center",
         margin: 13.5,    
         borderRadius: 10,
-        height: '80%',
+        flex: 1,
         
     },
     movedet1:{
         flex: 1,
         backgroundColor: '#E0E0E0',
-        width: "100%",
         alignItems: "center",
         borderTopRightRadius:10,
         borderTopLeftRadius: 10,
@@ -256,8 +255,5 @@ const styles = StyleSheet.create({
         marginBottom: -5,
         marginTop: -5
     },
-    sliders:{
-        maximumValue: 200,
-        minimumValue: 0
-    }
+   
 })

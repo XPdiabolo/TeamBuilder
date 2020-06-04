@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Image, Text, View, ImageBackground, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Image, Text, View, ImageBackground, TouchableWithoutFeedback, Picker } from 'react-native';
+
 
 
 
@@ -88,9 +89,11 @@ const Measures = ({user}) => {
 };
 
 const Stats =({user})=>{
+
+  
     return(
         <View style={styles.description}>
-            <Text>Mi pana</Text>
+             
             
         </View>
     );
@@ -110,7 +113,7 @@ export default PokeTeam
 const styles = StyleSheet.create({
     page:{
         flex: 1,
-        height: "90vh",
+        
         backgroundColor: "orange"
     },
     pokamios:{
@@ -121,7 +124,7 @@ const styles = StyleSheet.create({
     },
     grup1:{ 
         flex: 1,
-        width: "100%",       
+               
         flexDirection: "row",
         //alignItems: "center",
         justifyContent: "center"
@@ -129,7 +132,7 @@ const styles = StyleSheet.create({
     },
     grup1text:{
         flexDirection: "row",
-        width: "95%",
+        flex: 1,
         justifyContent: "center"
     },
     header:{
@@ -211,7 +214,7 @@ const styles = StyleSheet.create({
         paddingBottom: 5,
         fontWeight: 'bold',
         paddingTop: 5,
-        width: '100%',
+        flex: 1,
         backgroundColor: '#E0E0E0',
         color: 'black',
         
@@ -230,8 +233,7 @@ const styles = StyleSheet.create({
     },
     measures:{
         flexDirection: 'column',
-        height: "70%",
-        width: "45%",
+        flex: 1,
         alignSelf: "center",
         backgroundColor: 'aquamarine',
         justifyContent: "space-around",
@@ -255,12 +257,12 @@ const styles = StyleSheet.create({
         flex: 0.75,
         justifyContent: "center",
         //alignItems: "center",
-        height: '100%',
+        
         backgroundColor: '#E0E0E0',
     },
     mer2:{
         flex: 1.25,
-        height: '100%',
+        
         justifyContent: "center",
         alignItems: "center",
         backgroundColor:'white'

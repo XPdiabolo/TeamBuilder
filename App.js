@@ -166,15 +166,13 @@ const styles = StyleSheet.create ({
     flex: 1
   },
   tbar:{
-    width: "100vw",
-    height: 100
+    flex: 1,
   },
 main:{
-  flow: 1
+  flex: 1
 },
 bbar:{
-  height: 80,
-  width: "100vw"
+  flex: 1,
 },
 navContainer:{
   flex: 1,

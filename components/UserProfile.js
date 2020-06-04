@@ -87,7 +87,7 @@ export default UserProfile
 const styles = StyleSheet.create({
     page:{
         flex: 1,
-        height: "90vh",
+        
         backgroundColor: "orange"
     },
     header:{
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
         paddingBottom: 5,
         fontWeight: 'bold',
         paddingTop: 5,
-        width: '100%',
+        flex: 1,
         backgroundColor: '#E0E0E0',
         color: 'black',
         fontSize: 20
@@ -187,8 +187,7 @@ const styles = StyleSheet.create({
     },
     measures:{
         flexDirection: 'column',
-        height: "70%",
-        width: "45%",
+        flex: 1,
         alignSelf: "center",
         backgroundColor: 'aquamarine',
         justifyContent: "space-around",
@@ -212,12 +211,12 @@ const styles = StyleSheet.create({
         flex: 0.75,
         justifyContent: "center",
         //alignItems: "center",
-        height: '100%',
+        
         backgroundColor: '#E0E0E0',
     },
     mer2:{
         flex: 1.25,
-        height: '100%',
+        
         justifyContent: "center",
         alignItems: "center",
         backgroundColor:'white'

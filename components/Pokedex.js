@@ -112,8 +112,7 @@ const styles = StyleSheet.create({
     paddingTop: 25,
   },
   container: {
-    width: "100vw",
-    height: "200vw",
+    flex: 1,
     //flex: 1,
     //backgroundColor: "#ef503b",
     alignItems: "center",
@@ -127,7 +126,7 @@ const styles = StyleSheet.create({
   },
   box: {
     backgroundColor: "white",
-    width: "90%",
+    flex: 1,
     margin: 15,
     marginLeft: 20,
     padding: 10,
@@ -138,7 +137,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   scroll:{
-    flow: 1,
+    flex: 1,
     marginBottom: 90
   },
   sprite:{
