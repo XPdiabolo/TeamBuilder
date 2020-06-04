@@ -8,7 +8,7 @@ import { observer } from 'mobx-react';
 const RenderDetails = observer(() =>{
 
     const details = useContext(DetailsContext);
-    const pokemonexemple = "rayquaza";
+    const pokemonexemple = "torchic";
   
     useEffect(() => {
       details.loadDetails(pokemonexemple);
@@ -42,9 +42,11 @@ const PokemonStats = (user) =>{
 
 
 const Profile =({user})=>{
+    //https://play.pokemonshowdown.com/sprites/xyani/bulbasaur.gif
+    //https://img.pokemondb.net/sprites/x-y/normal/
     return(
         <View style={styles.profile}>
-            <Image source={"https://img.pokemondb.net/sprites/x-y/normal/"+ user.user.species.name +".png"}  style={styles.sprite}/>
+            <Image source={"https://play.pokemonshowdown.com/sprites/xyani/"+ user.user.species.name +".gif"}  style={styles.sprite}/>
             <Movements user={user} />
         </View>
     );

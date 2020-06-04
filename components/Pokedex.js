@@ -62,12 +62,12 @@ const RenderSprites = observer(({pokemonname}) =>{
 });
 
 const renderItem = ({ item }) => {
-  const url = "https://img.pokemondb.net/sprites/x-y/normal/";
+  const url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"; //https://img.pokemondb.net/sprites/x-y/normal/
   const number = item.url.substr(34, 37);
   const numberdef = number.slice(0,-1);
 
   return <View style={styles.box}>
-    <Text style={styles.pokedexName}>Nº {numberdef} {item.name.toUpperCase(1)}  <Image source={url+item.name+".png"}  style={styles.sprite}/> </Text>
+    <Text style={styles.pokedexName}>Nº {numberdef} {item.name.toUpperCase(1)}  <Image source={url+numberdef+".png"}  style={styles.sprite}/> </Text>
     
   </View>
 };
