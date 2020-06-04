@@ -57,7 +57,7 @@ const Pokemons =({user})=>{
                         
                     </View>
 
-                     <View style={styles.grup1text}>
+                    <View style={styles.grup1text}>
 
                         <Text style={[styles.pokename, {flex: 0.8}]}>{user.slot4.name}</Text>
                         <Text style={[styles.pokename, {flex: 0.8}]}>{user.slot5.name}</Text>
@@ -114,6 +114,8 @@ const styles = StyleSheet.create({
     page:{
         flex: 1,
         
+        
+       
         backgroundColor: "orange"
     },
     pokamios:{
@@ -194,7 +196,7 @@ const styles = StyleSheet.create({
     stats:{
         borderTopRightRadius:10,
         borderTopLeftRadius: 10,
-        flex: 2,
+        flex: 1,
         marginRight: 15,
         marginLeft: 15,
         //paddingLeft: 15,
@@ -213,8 +215,7 @@ const styles = StyleSheet.create({
         paddingRight: 15,
         paddingBottom: 5,
         fontWeight: 'bold',
-        paddingTop: 5,
-        flex: 1,
+        paddingTop: 5,        
         backgroundColor: '#E0E0E0',
         color: 'black',
         
@@ -224,7 +225,8 @@ const styles = StyleSheet.create({
         paddingLeft: 15,
         paddingRight: 15,
         paddingTop: 10,
-        paddingBottom: 20
+        paddingBottom: 20,
+        flex: 2,
     },
     sprite:{
         height: 90,

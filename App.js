@@ -166,16 +166,16 @@ const styles = StyleSheet.create ({
     flex: 1
   },
   tbar:{
-    flex: 1,
+    
   },
-main:{
+  main:{
   flex: 1
-},
-bbar:{
+    },
+  bbar:{
   flex: 1,
-},
-navContainer:{
+  },
+  navContainer:{
   flex: 1,
-}
+  }
 
 }) 
