@@ -4,6 +4,7 @@ import { StyleSheet, Image, Text, View, ImageBackground, TouchableWithoutFeedbac
 
 
 
+
 const PokeTeam = ({user}) =>{
     return(
         <ImageBackground style={styles.page} source={require("../assets/background_team.png")}>
@@ -30,7 +31,7 @@ const Pokemons =({user})=>{
             <Text style={styles.titles}>Team 01</Text>
             
                 
-                <View style={styles.pokamios}>
+                <View style={styles.content}>
                     <View style={styles.grup1}>
 
                         <Image source={{ uri : user.slot1.avatar }}  style={[styles.sprite]}/>
@@ -93,7 +94,8 @@ const Stats =({user})=>{
   
     return(
         <View style={styles.description}>
-             
+            <Text style={styles.titles}>Weaknesses</Text>
+            <Text style={styles.content}>Hola</Text>
             
         </View>
     );
@@ -102,8 +104,8 @@ const Stats =({user})=>{
 const Weakness =({user})=>{
     return(
         <View style={styles.stats}>
-            <Text style={styles.titles}>Weaknesses</Text>
-            <Text style={styles.content}>Here The Weaknesses</Text>
+            <Text style={styles.titles}>Stats</Text>
+            <Text style={styles.content}>Here The Stats</Text>
         </View>
     );
 };
@@ -119,13 +121,14 @@ const styles = StyleSheet.create({
         backgroundColor: "orange"
     },
     pokamios:{
+        
         margin: 10,
         justifyContent: "center",
         alignItems: "center",        
         flexDirection: "column",
     },
     grup1:{ 
-        flex: 1,
+        
                
         flexDirection: "row",
         //alignItems: "center",
@@ -134,8 +137,8 @@ const styles = StyleSheet.create({
     },
     grup1text:{
         flexDirection: "row",
-        flex: 1,
-        justifyContent: "center"
+        
+        position:"relative",
     },
     header:{
         flex: 0.8,
@@ -222,11 +225,7 @@ const styles = StyleSheet.create({
         fontSize: 20
     },
     content:{
-        paddingLeft: 15,
-        paddingRight: 15,
-        paddingTop: 10,
-        paddingBottom: 20,
-        flex: 2,
+        
     },
     sprite:{
         height: 90,

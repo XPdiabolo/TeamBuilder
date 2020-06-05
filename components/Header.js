@@ -4,7 +4,7 @@ import { StyleSheet, Image, Text, View} from 'react-native';
 const Header =()=>{
     return(
         <View style={styles.header}>
-            <Text style={styles.headertitle}>Pokédex</Text>
+            <Text style={styles.headertitle}>Team Builder</Text>
         </View>
     );
 };

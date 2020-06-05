@@ -55,24 +55,24 @@ const Profile =({user})=>{
 const Movements = ({user}) => {
     return(
         <View style={styles.moves}>
-            <View style={styles.movedet1}>
+            <View>
                 <Text style={styles.titles}>Movements</Text>
             </View>
 
-            <View style={[styles.movedet2]}>
-                <Text style={styles.content}>{user.user.moves[0].move.name}</Text>
+            <View>
+                <Text>{user.user.moves[0].move.name}</Text>
             </View>
 
-            <View style={styles.movedet2}>
-                <Text style={styles.content}>{user.user.moves[1].move.name}</Text>
+            <View>
+                <Text>{user.user.moves[1].move.name}</Text>
             </View>
 
-            <View style={styles.movedet2}>
-                <Text style={styles.content}>{user.user.moves[2].move.name}</Text>
+            <View>
+                <Text>{user.user.moves[2].move.name}</Text>
             </View>
 
-            <View style={styles.movedet2}>
-                <Text style={styles.content}>{user.user.moves[3].move.name}</Text>
+            <View>
+                <Text>{user.user.moves[3].move.name}</Text>
             </View>
         </View>
   
@@ -92,11 +92,11 @@ const Items =({user})=>{
 const Item = ({user}) =>{
     return(
         <View style={styles.item}>
-        <View style={styles.movedet1}>
+        <View>
             <Text style={styles.titles}>Item</Text>
         </View>
 
-        <View style={[styles.movedet2]}>
+        <View>
             <Text style={styles.content}>{user.item}</Text>
         </View>
     </View>
@@ -106,11 +106,11 @@ const Item = ({user}) =>{
 const Ability = ({user}) =>{
     return(
         <View style={styles.item}>
-        <View style={styles.movedet1}>
+        <View>
             <Text style={styles.titles}>Ability</Text>
         </View>
 
-        <View style={[styles.movedet2]}>
+        <View>
             <Text style={styles.content}>{user.user.abilities[0].ability.name}</Text>
         </View>
     </View>
@@ -120,11 +120,11 @@ const Ability = ({user}) =>{
 const Nature = ({user}) =>{
     return(
         <View style={styles.item}>
-        <View style={styles.movedet1}>
+        <View>
             <Text style={styles.titles}>Nature</Text>
         </View>
 
-        <View style={[styles.movedet2]}>
+        <View>
             <Text style={styles.content}>Strong</Text> 
         </View>
     </View>
@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
     stats:{
         borderTopRightRadius:10,
         borderTopLeftRadius: 10,
-        flex: 2,
+        flex: 1,
         marginRight: 15,
         marginLeft: 15,
         backgroundColor: 'white',
@@ -205,7 +205,7 @@ const styles = StyleSheet.create({
         paddingBottom: 5,
         fontWeight: 'bold',
         paddingTop: 5,
-        flex: 1,
+        
         backgroundColor: '#E0E0E0',
         color: 'black',
         fontSize: 20,
@@ -243,17 +243,6 @@ const styles = StyleSheet.create({
         flex: 1,
         
     },
-    movedet1:{
-        flex: 1,
-        backgroundColor: '#E0E0E0',
-        alignItems: "center",
-        borderTopRightRadius:10,
-        borderTopLeftRadius: 10,
-    },
-    movedet2:{
-        flex: 1,
-        marginBottom: -5,
-        marginTop: -5
-    },
+
    
 })
