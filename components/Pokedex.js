@@ -67,7 +67,7 @@ const renderItem = ({ item }) => {
   const numberdef = number.slice(0,-1);
 
   return <View style={styles.box}>
-    <Text style={styles.pokedexName}>Nº {numberdef} {item.name.toUpperCase(1)}  <Image source={url+numberdef+".png"}  style={styles.sprite}/> </Text>
+    <Text style={styles.pokedexName}>Nº {numberdef} {item.name.toUpperCase(1)} <Image source={{uri : url+numberdef+".png"}}  style={styles.sprite}/> </Text>
     
   </View>
 };
@@ -127,6 +127,8 @@ const styles = StyleSheet.create({
   box: {
     backgroundColor: "white",
     flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
     margin: 15,
     marginLeft: 20,
     padding: 10,
@@ -137,11 +139,11 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   scroll:{
-    flex: 1,
-    marginBottom: 90
+    flex: 1
   },
   sprite:{
     width: 50,
     height: 50,
+    resizeMode: "contain"
   },
 });

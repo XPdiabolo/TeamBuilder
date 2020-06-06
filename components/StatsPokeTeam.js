@@ -46,7 +46,7 @@ const Profile =({user})=>{
     //https://img.pokemondb.net/sprites/x-y/normal/
     return(
         <View style={styles.profile}>
-            <Image source={"https://play.pokemonshowdown.com/sprites/xyani/"+ user.user.species.name +".gif"}  style={styles.sprite}/>
+            <Image source={{uri : "https://play.pokemonshowdown.com/sprites/xyani/"+ user.user.species.name +".gif"}}  style={styles.sprite}/>
             <Movements user={user} />
         </View>
     );
@@ -169,7 +169,13 @@ const styles = StyleSheet.create({
     },
     items:{
         flexDirection: 'row',
-        marginBottom: 5
+        //marginBottom: 5,
+        marginRight: 13.5,
+        marginLeft: 13.5,
+        marginBottom: 18.5,
+        marginTop: 13.5,
+        justifyContent: "space-evenly"
+        //justifyContent: "space-around"
     },
    
     profile:{
@@ -187,8 +193,8 @@ const styles = StyleSheet.create({
         borderTopRightRadius:10,
         borderTopLeftRadius: 10,
         flex: 1,
-        marginRight: 15,
-        marginLeft: 15,
+        marginRight: 25,
+        marginLeft: 25,
         backgroundColor: 'white',
         alignItems: 'stretch'
     },
@@ -204,8 +210,7 @@ const styles = StyleSheet.create({
         paddingRight: 15,
         paddingBottom: 5,
         fontWeight: 'bold',
-        paddingTop: 5,
-        
+        paddingTop: 5,  
         backgroundColor: '#E0E0E0',
         color: 'black',
         fontSize: 20,
@@ -223,8 +228,9 @@ const styles = StyleSheet.create({
         paddingBottom: 10
     },
     sprite:{
-        height: 125,
-        width: 125,
+        flex: 1,
+        margin: 15,
+        resizeMode: "contain"
     },
     moves:{
         flexDirection: 'column',
@@ -232,15 +238,15 @@ const styles = StyleSheet.create({
         alignItems: "center",
         margin: 15,    
         borderRadius: 10,
-        flex: 1,
+        //flex: 1,
     },
     item:{
         flexDirection: 'column',
         backgroundColor: 'white',
         alignItems: "center",
-        margin: 13.5,    
+        //margin: 13.5,    
         borderRadius: 10,
-        flex: 1,
+        //flex: 1,
         
     },
 
