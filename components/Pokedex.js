@@ -4,6 +4,7 @@ import { PokemonsProvider, PokemonsContext } from '../models/Pokemonsmodel';
 import { DetailsProvider, DetailsContext } from '../models/DetailsModel';
 import { observer } from 'mobx-react';
 
+const flag = null;
 
 const GeneratePokemons = observer(() => {  // (length) entre los dos =
   const pokemons = useContext(PokemonsContext);
