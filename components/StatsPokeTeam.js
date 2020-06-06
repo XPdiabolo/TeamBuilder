@@ -6,6 +6,7 @@ import { ObjsProvider, ObjsContext } from '../models/ObjectsModel';
 import { observer } from 'mobx-react';
 import { Dropdown } from 'react-native-material-dropdown';
 
+
 const RenderDetails = observer(() =>{
 
     const details = useContext(DetailsContext);
@@ -99,7 +100,7 @@ const Item = observer(() =>{
         objects.loadObjs();
       }, []);  
 
-    const allobjs = objects.objs.results.map(element=>element.name);
+    //const allobjs = objects.objs.results.map(element=>element.name);
 
 //<Dropdown label='select' data={allobjs} textColor="black" style={styles.dropdown}/>
     const datos = [{
@@ -116,7 +117,7 @@ const Item = observer(() =>{
             <Text style={styles.titles}>Item</Text>
         </View>
         <View>
-        <Dropdown label='select' data={allobjs} textColor="black" style={styles.dropdown}/>
+        <Dropdown label='select' data={datos} textColor="black" style={styles.dropdown}/>
         </View>
     </View>
     );
