@@ -105,7 +105,7 @@ const PoketeaM =()=>{
     <Poketeam user={equipo} />
 
     <Stack.Navigator>
-      <Stack.Screen name="Pokedex" component={Pokedex}/>
+      <Stack.Screen name="Pokedex" component={PokedeX}/>
       <Stack.Screen name="Poke" component={PokemonStatS}/>
     </Stack.Navigator>
   </NavigationContainer>
@@ -135,7 +135,7 @@ export default function App() {
         
         <Tab.Screen
           name="Pokedex"
-          component={Pokedex}
+          component={PokedeX}
           navigationOptions={{ tabBarIcon: PokedexIcono.PokedexIcon }}
         />
         <Tab.Screen
@@ -152,15 +152,18 @@ export default function App() {
   );
 }
 
-function Pokedex(){
+const PokedeX =()=>{
   return(
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Pokemon" component={UserProfilE}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Pokedex />
+
+    <Stack.Navigator>
+      <Stack.Screen name="Pokemon" component={UserProfilE}/>
+    </Stack.Navigator>
+  </NavigationContainer>
   );
-}
+};
+
 
 
 const styles = StyleSheet.create ({
