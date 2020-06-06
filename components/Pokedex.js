@@ -12,14 +12,6 @@ const GeneratePokemons = observer(() => {  // (length) entre los dos =
     pokemons.loadPokemon();
   }, []);
 
-  //filterSearch(text){
-  //  const newData= pokemons.pokemon.filter(function(item){
-  //    const itemData = item.name.toUpperCase()
-  //    const textData = text.toUpperCase()
-  //    return
-  //  })
- // };
-
   if (pokemons.pokemon == null) {
     return (
       <View>
@@ -31,16 +23,14 @@ const GeneratePokemons = observer(() => {  // (length) entre los dos =
   return(
     <View>
     <TextInput
-    style={styles.textinput}
-    onChangeText={(text)=> this.filterSearch(text)}
-    />
+    style={styles.textinput}/>
     <FlatList
           data={pokemons.pokemon}
           renderItem={renderItem}
         />
     </View>
   )
-})
+});
 
 const renderItem = ({ item }) => {
   const url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"; //https://img.pokemondb.net/sprites/x-y/normal/
@@ -158,5 +148,8 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 10,
     backgroundColor: 'white'
+  },
+  hidden:{
+    display: "none"
   },
 });
