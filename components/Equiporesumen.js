@@ -145,11 +145,12 @@ export default PokeTeam
 
 const styles = StyleSheet.create({
     page:{
-        flex: 1,
-        
-        
-       
+        flex: 1,     
         backgroundColor: "orange"
+    },
+    grup1:{
+        flexDirection: "row",
+        justifyContent: "center",
     },
     pokamios:{
         
