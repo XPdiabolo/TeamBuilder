@@ -4,7 +4,6 @@ import React, { useContext, useEffect } from 'react';
 //import Slider from '@react-native-community/slider';
 import { StyleSheet, Image, Text, View, ImageBackground, ActivityIndicator, StatusBarIOS } from 'react-native';
 import { DetailsProvider, DetailsContext } from '../models/DetailsModel';
-import { ObjsProvider, ObjsContext } from '../models/ObjectsModel';
 import { observer } from 'mobx-react';
 //import { Dropdown } from 'react-native-material-dropdown';
 
@@ -36,14 +35,12 @@ const UserProfile = (user) =>{
     return(
 
         <DetailsProvider>
-        <ObjsProvider>
         <ImageBackground style={styles.page} source={require("../assets/background_team.png")}>
             <Name user={user} />
             <Profile user={user} />
             <Description user={user} />
             <Stats user={user} />
         </ImageBackground>
-        </ObjsProvider>
         </DetailsProvider>
     );
 };
@@ -52,7 +49,7 @@ const UserProfile = (user) =>{
 const Name =({user})=>{
     return(
         <View style={styles.name}>
-            <Text style={styles.number} >Nº {user.poknum}</Text><Text style={styles.pokename}>{user.name}</Text>
+            <Text style={styles.number} >Nº {user.poknum}</Text><Text style={styles.pokename}>{user.user.name}</Text>
         </View>
     );
 };
@@ -117,7 +114,7 @@ const Stats =({user})=>{
     );
 };
 
-export default UserProfile
+export default RenderDetails
 
 const styles = StyleSheet.create({
     page:{

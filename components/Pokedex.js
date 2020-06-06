@@ -12,13 +12,13 @@ const GeneratePokemons = observer(() => {  // (length) entre los dos =
     pokemons.loadPokemon();
   }, []);
 
-  filterSearch(text){
-    const newData= pokemons.pokemon.filter(function(item){
-      const itemData = item.name.toUpperCase()
-      const textData = text.toUpperCase()
-      return
-    })
-  };
+  //filterSearch(text){
+  //  const newData= pokemons.pokemon.filter(function(item){
+  //    const itemData = item.name.toUpperCase()
+  //    const textData = text.toUpperCase()
+  //    return
+  //  })
+ // };
 
   if (pokemons.pokemon == null) {
     return (
