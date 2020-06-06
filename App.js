@@ -136,7 +136,7 @@ export default function App() {
         <Tab.Screen
           name="Pokedex"
           component={PokedeX}
-          navigationOptions={{ tabBarIcon: PokedexIcono.PokedexIcon }}
+          //navigationOptions={{ tabBarIcon: PokedexIcono.PokedexIcon }}
         />
         <Tab.Screen
           name="Team"
