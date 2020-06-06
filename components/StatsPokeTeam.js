@@ -107,7 +107,7 @@ const Item = observer(() =>{
       }, {
         value: 'Mango',
       }, {
-        value: 'Pear',
+        value: 'Pearl',
       }];
 
     return(
