@@ -1,65 +1,41 @@
 import React, { useContext, useEffect } from 'react';
-import { StyleSheet, Image, Text, View, FlatList, ImageBackground, ScrollView, ActivityIndicator } from 'react-native';
+import { StyleSheet, Image, Text, View, FlatList, ImageBackground, ScrollView, ActivityIndicator, TextInput } from 'react-native';
 import { PokemonsProvider, PokemonsContext } from '../models/Pokemonsmodel';
 import { DetailsProvider, DetailsContext } from '../models/DetailsModel';
 import { observer } from 'mobx-react';
 
 
 const GeneratePokemons = observer(() => {  // (length) entre los dos =
-  // let numbers = [];
-  //for (let i = 0; i < length; i++) {
-  //  numbers.push({ number: i+1 });
-  //}
-  //return numbers;
   const pokemons = useContext(PokemonsContext);
 
   useEffect(() => {
     pokemons.loadPokemon();
   }, []);
 
+  renderHeader = () =>{
+    return <SearchBar placeholder='Search here...'
+    lightTheme round editable={true}
+    value={this.state.searchTxt}/>
+  };
+
   if (pokemons.pokemon == null) {
     return (
       <View>
-        <ActivityIndicator size="large" />
+        <ActivityIndicator size="large"
+        lightTheme round editable={true}/>
       </View>
     )
   };
   return(
     <View>
+    <TextInput style={styles.textinput}/>
     <FlatList
           data={pokemons.pokemon}
           renderItem={renderItem}
         />
     </View>
   )
-});
-
-//esta funcion al final no se usa
-const RenderSprites = observer(({pokemonname}) =>{
-
-  const details = useContext(DetailsContext);
-  const namesarray = [];
-
-  useEffect(() => {
-    details.loadDetails(pokemonname);
-  }, []);
-
-  if (details.detail == null) {
-    return (
-      <View>
-        <ActivityIndicator size="large" />
-      </View>
-    )
-  }else{
-    namesarray.push(details.detail.front_default);
-    const lastname = namesarray[namesarray.length - 1];
-    return(
-      <View>
-        <Image source={namesarray[namesarray.length - 1]}  style={styles.sprite}/>
-      </View>
-      )
-  };
-});
+})
 
 const renderItem = ({ item }) => {
   const url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"; //https://img.pokemondb.net/sprites/x-y/normal/
@@ -167,5 +143,13 @@ const styles = StyleSheet.create({
     position: 'relative',
     margin: 10,
     
+  },
+  textinput:{
+    height: 30,
+    borderWidth: 1,
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 15,
+    marginBottom: 10
   },
 });
