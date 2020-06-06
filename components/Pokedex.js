@@ -12,10 +12,12 @@ const GeneratePokemons = observer(() => {  // (length) entre los dos =
     pokemons.loadPokemon();
   }, []);
 
-  renderHeader = () =>{
-    return <SearchBar placeholder='Search here...'
-    lightTheme round editable={true}
-    value={this.state.searchTxt}/>
+  filterSearch(text){
+    const newData= pokemons.pokemon.filter(function(item){
+      const itemData = item.name.toUpperCase()
+      const textData = text.toUpperCase()
+      return
+    })
   };
 
   if (pokemons.pokemon == null) {
@@ -28,7 +30,10 @@ const GeneratePokemons = observer(() => {  // (length) entre los dos =
   };
   return(
     <View>
-    <TextInput style={styles.textinput}/>
+    <TextInput
+    style={styles.textinput}
+    onChangeText={(text)=> this.filterSearch(text)}
+    />
     <FlatList
           data={pokemons.pokemon}
           renderItem={renderItem}
@@ -146,10 +151,12 @@ const styles = StyleSheet.create({
   },
   textinput:{
     height: 30,
-    borderWidth: 1,
+    borderRadius: 15,
+    paddingLeft: 15,
     marginLeft: 20,
     marginRight: 20,
     marginTop: 15,
-    marginBottom: 10
+    marginBottom: 10,
+    backgroundColor: 'white'
   },
 });
