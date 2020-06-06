@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Image, Text, View, ImageBackground, TouchableWithoutFeedback, Picker } from 'react-native';
+import { StyleSheet, Image, Text, View, ImageBackground, TouchableWithoutFeedback, Picker, TouchableOpacity } from 'react-native';
 import Slider from '@react-native-community/slider';
 
 
@@ -49,35 +49,51 @@ const Pokemons =({user})=>{
                 <View style={styles.content}>
                     <View style={styles.grup1}>
 
-                        <Image source={{ uri : user.slot1.avatar }}  style={[styles.sprite]}/>
-                        <Image source={{ uri : user.slot2.avatar }}  style={[styles.sprite]}/>
-                        <Image source={{ uri : user.slot3.avatar }}  style={[styles.sprite]}/>
+                        <TouchableOpacity>
+                            <View style={styles.button}>
+                                <Text style={styles.buttonText}>
+                                    Añadir
+                                </Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <View style={styles.button}>
+                                <Text style={styles.buttonText}>
+                                    Añadir
+                                </Text>
+                            </View>
+                        </TouchableOpacity><TouchableOpacity>
+                            <View style={styles.button}>
+                                <Text style={styles.buttonText}>
+                                    Añadir
+                                </Text>
+                            </View>
+                        </TouchableOpacity>
                         
                     </View>
 
-                    
-
-                    <View style={styles.grup1text}>
-
-                        <Text style={[styles.pokename, {flex: 0.8}]}>{user.slot1.name}</Text>
-                        <Text style={[styles.pokename, {flex: 0.8}]}>{user.slot2.name}</Text>
-                        <Text style={[styles.pokename, {flex: 0.8}]}>{user.slot3.name}</Text>
-                    
-                    </View>
-
-
+                
                     <View style={styles.grup1}>
-                        <Image source={{ uri : user.slot4.avatar }}  style={[styles.sprite]}/>                        
-                        <Image source={{ uri : user.slot5.avatar }}  style={[styles.sprite]}/>
-                        <Image source={{ uri : user.slot6.avatar }}  style={[styles.sprite]}/>
-                        
-                    </View>
-
-                    <View style={styles.grup1text}>
-
-                        <Text style={[styles.pokename, {flex: 0.8}]}>{user.slot4.name}</Text>
-                        <Text style={[styles.pokename, {flex: 0.8}]}>{user.slot5.name}</Text>
-                        <Text style={[styles.pokename, {flex: 0.8}]}>{user.slot6.name}</Text>
+                        <TouchableOpacity>
+                                <View style={styles.button}>
+                                    <Text style={styles.buttonText}>
+                                        Añadir
+                                    </Text>
+                                </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <View style={styles.button}>
+                                    <Text style={styles.buttonText}>
+                                        Añadir
+                                    </Text>
+                                </View>
+                            </TouchableOpacity><TouchableOpacity>
+                                <View style={styles.button}>
+                                    <Text style={styles.buttonText}>
+                                        Añadir
+                                    </Text>
+                                </View>
+                            </TouchableOpacity>
                     
                     </View>
                 
@@ -283,7 +299,10 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor:'white'
     },
-    /*button: {
-        marginTop: 15
-      }*/
+    button: {
+        marginLeft: 40,
+        marginRight: 40,
+        paddingTop:35,
+        paddingBottom:35,
+      }
 })
