@@ -9,7 +9,7 @@ import { Dropdown } from 'react-native-material-dropdown';
 const RenderDetails = observer(() =>{
 
     const details = useContext(DetailsContext);
-    const pokemonexemple = "torchic";
+    const pokemonexemple = "articuno";
   
     useEffect(() => {
       details.loadDetails(pokemonexemple);
