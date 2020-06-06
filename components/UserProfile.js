@@ -3,7 +3,7 @@ import { StyleSheet, Image, Text, View, TouchableWithoutFeedback } from 'react-n
 
 
 
-const UserProfile = ({user}) =>{
+const UserProfile = (user) =>{
     return(
         <View style={styles.page}>
             <Name user={user} />
@@ -14,6 +14,7 @@ const UserProfile = ({user}) =>{
     );
 };
 
+//user.user.height
 const Name =({user})=>{
     return(
         <View style={styles.name}>
