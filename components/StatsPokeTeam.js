@@ -1,9 +1,10 @@
 import React, { useContext, useEffect } from 'react';
 //import Slider from '@react-native-community/slider';
-import { StyleSheet, Image, Text, View, ActivityIndicator } from 'react-native';
+import { StyleSheet, Image, Text, View, ActivityIndicator, StatusBarIOS } from 'react-native';
 import { DetailsProvider, DetailsContext } from '../models/DetailsModel';
+import { ObjsProvider, ObjsContext } from '../models/ObjectsModel';
 import { observer } from 'mobx-react';
-
+import { Dropdown } from 'react-native-material-dropdown';
 
 const RenderDetails = observer(() =>{
 
@@ -30,11 +31,13 @@ const RenderDetails = observer(() =>{
 const PokemonStats = (user) =>{
     return(
         <DetailsProvider>
+        <ObjsProvider>
         <View style={styles.page}>
             <Profile user={user} />
             <Items user={user} />
             <Stats user={user} />
         </View>
+        </ObjsProvider>
         </DetailsProvider>
     );
 };
@@ -82,26 +85,45 @@ const Movements = ({user}) => {
 const Items =({user})=>{
     return(
         <View style={styles.items}>
-            <Item  user={user} />
+            <Item/>
             <Ability  user={user} />
             <Nature  user={user} />
         </View>
     );
 };
 
-const Item = ({user}) =>{
+const Item = observer(() =>{
+
+    const objects = useContext(ObjsContext);
+    useEffect(() => {
+        objects.loadObjs();
+      }, []);  
+
+    //const allobjs = objects.objs.results.map(element=>element.name);
+
+//<Dropdown label='select' data={allobjs} textColor="black" style={styles.dropdown}/>
+    const datos = [{
+        value: 'Banana',
+      }, {
+        value: 'Mango',
+      }, {
+        value: 'Pear',
+      }];
+
     return(
         <View style={styles.item}>
         <View>
             <Text style={styles.titles}>Item</Text>
         </View>
-
         <View>
-            <Text style={styles.content}>{user.item}</Text>
+        <Text>{JSON.stringify(objects.objs.results[0].name)}</Text>
+        <Dropdown label='select' data={[{value:'item1'}, {value:'item2'}]}/>
         </View>
     </View>
     );
-};
+});
+
+//<Text>{JSON.stringify(objects.objs)}</Text>
 
 const Ability = ({user}) =>{
     return(
@@ -243,12 +265,14 @@ const styles = StyleSheet.create({
     item:{
         flexDirection: 'column',
         backgroundColor: 'white',
-        alignItems: "center",
+        //alignItems: "center",
         //margin: 13.5,    
         borderRadius: 10,
         //flex: 1,
         
     },
+    dropdown:{
+    }
 
    
 })

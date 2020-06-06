@@ -3,6 +3,7 @@ import React, { createContext} from "react";
 
 class DetailsModel{
     @observable detail = null ;
+    
 
     @action async loadDetails(name){//name
       const response = await fetch("https://pokeapi.co/api/v2/pokemon/"+name+"/");//  
