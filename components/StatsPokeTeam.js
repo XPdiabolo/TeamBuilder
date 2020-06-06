@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 //import Slider from '@react-native-community/slider';
-import { StyleSheet, Image, Text, View, ActivityIndicator, StatusBarIOS } from 'react-native';
+import { StyleSheet, Image, Text, View, ImageBackground, ActivityIndicator, StatusBarIOS } from 'react-native';
 import { DetailsProvider, DetailsContext } from '../models/DetailsModel';
 import { ObjsProvider, ObjsContext } from '../models/ObjectsModel';
 import { observer } from 'mobx-react';
@@ -31,13 +31,14 @@ const RenderDetails = observer(() =>{
 
 const PokemonStats = (user) =>{
     return(
+        
         <DetailsProvider>
         <ObjsProvider>
-        <View style={styles.page}>
+        <ImageBackground style={styles.page} source={require("../assets/background_team.png")}>
             <Profile user={user} />
             <Items user={user} />
             <Stats user={user} />
-        </View>
+        </ImageBackground>
         </ObjsProvider>
         </DetailsProvider>
     );
@@ -174,8 +175,6 @@ export default RenderDetails
 const styles = StyleSheet.create({
     page:{
         flex: 1,
-        
-        backgroundColor: "orange"
     },
     header:{
         height: 100,
