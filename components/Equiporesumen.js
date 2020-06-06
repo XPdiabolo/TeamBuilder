@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Image, Text, View, ImageBackground, TouchableWithoutFeedback, Picker } from 'react-native';
+import Slider from '@react-native-community/slider';
 
 
 
@@ -119,7 +120,7 @@ const Weakness =({user})=>{
     return(
         <View style={styles.stats}>
             <Text style={styles.titles}>Stats</Text>
-            <Text style={styles.content}>Here The Stats</Text>
+            <Text style={styles.content}>Hola</Text>
         </View>
     );
 };

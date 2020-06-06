@@ -158,7 +158,7 @@ const Nature = ({user}) =>{
 const Stats =({user})=>{
     return(
         <View style={styles.stats}>
-            <Text style={styles.titles}>Stats</Text>
+            <Text style={styles.titles}>Base Stats</Text>
             <Text style={styles.content2}>Speed: {user.user.stats[0].base_stat}</Text>
             <Text style={styles.content2}>Sp. Defense: {user.user.stats[1].base_stat}</Text>
             <Text style={styles.content2}>SP. Attack: {user.user.stats[2].base_stat}</Text>
