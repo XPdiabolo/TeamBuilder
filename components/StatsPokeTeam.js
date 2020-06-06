@@ -4,7 +4,7 @@ import { StyleSheet, Image, Text, View, ActivityIndicator, StatusBarIOS } from '
 import { DetailsProvider, DetailsContext } from '../models/DetailsModel';
 import { ObjsProvider, ObjsContext } from '../models/ObjectsModel';
 import { observer } from 'mobx-react';
-import { Dropdown } from 'react-native-material-dropdown';
+//import { Dropdown } from 'react-native-material-dropdown';
 
 const RenderDetails = observer(() =>{
 
@@ -117,7 +117,6 @@ const Item = observer(() =>{
         </View>
         <View>
         <Text>{JSON.stringify(objects.objs.results[0].name)}</Text>
-        <Dropdown label='select' data={[{value:'item1'}, {value:'item2'}]}/>
         </View>
     </View>
     );
