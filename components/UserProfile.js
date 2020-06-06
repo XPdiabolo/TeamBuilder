@@ -11,7 +11,7 @@ import { observer } from 'mobx-react';
 const RenderDetails = observer(() =>{
 
     const details = useContext(DetailsContext);
-    const pokemonexemple = "articuno";
+    const pokemonexemple = "mew";
   
     useEffect(() => {
       details.loadDetails(pokemonexemple);
@@ -35,11 +35,11 @@ const UserProfile = (user) =>{
     return(
 
         <DetailsProvider>
-        <ImageBackground style={styles.page} source={require("../assets/background_team.png")}>
+        <ImageBackground style={styles.page} source={require("../assets/background-pdx.png")}>
             <Name user={user} />
             <Profile user={user} />
             <Description user={user} />
-            <Stats user={user} />
+            <Shiny user={user} />
         </ImageBackground>
         </DetailsProvider>
     );
@@ -54,10 +54,20 @@ const Name =({user})=>{
     );
 };
 
-const Profile =({user})=>{
+/*const Profile =({user})=>{
     return(
         <View style={styles.profile}>
-            <Image source={{ uri : user.avatar }}  style={styles.sprite}/>
+            <Image source={{ uri : user.user.avatar }}  style={styles.sprite}/>
+            <Measures user={user} />
+        </View>
+    );
+};*/
+const Profile =({user})=>{
+    //https://play.pokemonshowdown.com/sprites/xyani/bulbasaur.gif
+    //https://img.pokemondb.net/sprites/x-y/normal/
+    return(
+        <View style={styles.profile}>
+            <Image source={{uri : "https://play.pokemonshowdown.com/sprites/xyani/"+ user.user.species.name +".gif"}}  style={styles.sprite}/>
             <Measures user={user} />
         </View>
     );
@@ -71,7 +81,7 @@ const Measures = ({user}) => {
                     <Text style={styles.measwidth}>Type</Text>
                 </View>
                 <View style={[{borderTopRightRadius:10}, styles.mer2]}>
-                    <Text style={styles.measwidth}>{user.type}</Text> 
+                    <Text style={styles.measwidth}>{user.user.types.map(element=>element.type.name)}</Text> 
                 </View>
             </View>
 
@@ -80,7 +90,7 @@ const Measures = ({user}) => {
                     <Text style={styles.measwidth}>Height</Text>  
                 </View>
                 <View style={styles.mer2}>
-                    <Text style={styles.measwidth}>{user.height} m</Text>
+                    <Text style={styles.measwidth}>{user.user.height} m</Text>
                 </View>
             </View>
 
@@ -89,7 +99,7 @@ const Measures = ({user}) => {
                     <Text style={styles.measwidth}>Weight</Text>
                 </View>
                 <View style={[{borderBottomRightRadius:10}, styles.mer2]}>
-                    <Text style={styles.measwidth}>{user.weight} kg</Text>
+                    <Text style={styles.measwidth}>{user.user.weight} kg</Text>
                 </View>
             </View>
         </View>
@@ -100,19 +110,43 @@ const Description =({user})=>{
     return(
         <View style={styles.description}>
             <Text style={styles.titles}>Description</Text>
-            <Text style={styles.content}>{user.description}</Text>
+            <Text style={styles.content}>{user.user.height} m</Text>
         </View>
     );
 };
 
-const Stats =({user})=>{
+const Shiny =({user})=>{
+   
     return(
-        <View style={styles.stats}>
-            <Text style={styles.titles}>Stats</Text>
-            <Text style={styles.content}>Here the stats/map</Text>
+        <View style={styles.Shiny}>
+            <Text style={styles.titles}>Shiny</Text>
+
+            <View style={styles.SpritesShiny}>
+                <Image source={{ uri : user.user.sprites.front_shiny }}  style={styles.sprite}/>
+                <Image source={{ uri : user.user.sprites.back_shiny }}  style={styles.sprite}/>
+            </View>
+
         </View>
     );
 };
+//<Image source={{uri : url+numberdef+".png"}}  style={styles.sprite}/>
+
+/*  const url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"; //https://img.pokemondb.net/sprites/x-y/normal/
+  const number = item.url.substr(34, 37);
+  const numberdef = number.slice(0,-1);*/
+
+
+
+
+
+  /*const Profile =({user})=>{
+    return(
+        <View style={styles.profile}>
+            <Image source={{ uri : user.user.avatar }}  style={styles.sprite}/>
+            <Measures user={user} />
+        </View>
+    );
+};*/
 
 export default RenderDetails
 
@@ -162,7 +196,8 @@ const styles = StyleSheet.create({
         paddingRight: 15
     },
     profile:{
-        borderRadius: 10,
+
+        //borderRadius: 10,
         marginRight: 15,
         marginLeft: 15,
         height: 150,
@@ -179,7 +214,7 @@ const styles = StyleSheet.create({
         //paddingLeft: 15,
         backgroundColor: 'white'
     },
-    stats:{
+    Shiny:{
         borderTopRightRadius:10,
         borderTopLeftRadius: 10,
         flex: 2,
@@ -202,7 +237,6 @@ const styles = StyleSheet.create({
         paddingBottom: 5,
         fontWeight: 'bold',
         paddingTop: 5,
-        flex: 1,
         backgroundColor: '#E0E0E0',
         color: 'black',
         fontSize: 20
@@ -214,14 +248,17 @@ const styles = StyleSheet.create({
         paddingBottom: 20
     },
     sprite:{
-        height: 125,
-        width: 125,
+        margin: 20,
+        height: 120,
+        width: 120,
+
+  
     },
     measures:{
         flexDirection: 'column',
         flex: 1,
         alignSelf: "center",
-        backgroundColor: 'aquamarine',
+        backgroundColor: '#E0E0E0',
         justifyContent: "space-around",
         //paddingBottom: 5,
         //paddingTop: 5,
@@ -253,5 +290,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor:'white'
     },
+    SpritesShiny:{
+        flexDirection: "row",
+
+    }
 })
-//paupp98@gmail.com
