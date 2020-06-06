@@ -101,16 +101,29 @@ const UserProfilE =()=>{
 
 const PoketeaM =()=>{
   return(
-    <NavigationContainer>
     <Poketeam user={equipo} />
+    /*<Stack.Navigator>
+  
+      <Stack.Screen name="Pokedex" component={Pokedex}/>
+      <Stack.Screen name="Poke" component={PokemonStatS}/>
+
+    </Stack.Navigator>*/
+  );
+}; 
+
+/*const Pokedex =()=>{
+  return(
 
     <Stack.Navigator>
-      <Stack.Screen name="Pokedex" component={PokedeX}/>
-      <Stack.Screen name="Poke" component={PokemonStatS}/>
+
+      <Stack.Screen name="Pokemon" component={UserProfilE}/>
+
     </Stack.Navigator>
-  </NavigationContainer>
   );
-};
+
+};*/
+
+
 
 /*const PokedexIcono = ( {color, size}) => (
     <PokedexIcon size={size} color={color} />
@@ -135,7 +148,7 @@ export default function App() {
         
         <Tab.Screen
           name="Pokedex"
-          component={PokedeX}
+          component={Pokedex}
           //navigationOptions={{ tabBarIcon: PokedexIcono.PokedexIcon }}
         />
         <Tab.Screen
@@ -152,17 +165,6 @@ export default function App() {
   );
 }
 
-const PokedeX =()=>{
-  return(
-    <NavigationContainer>
-    <Pokedex />
-
-    <Stack.Navigator>
-      <Stack.Screen name="Pokemon" component={UserProfilE}/>
-    </Stack.Navigator>
-  </NavigationContainer>
-  );
-};
 
 
 
