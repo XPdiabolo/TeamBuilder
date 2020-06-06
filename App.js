@@ -2,15 +2,13 @@ import React from 'react';
 import UserProfile from "./components/UserProfile.js";
 import PokemonStats from "./components/StatsPokeTeam.js";
 import Poketeam from "./components/Equiporesumen.js";
-import ResTeam from "./components/ResTeam.js";
 import Pokedex from "./components/Pokedex.js";
-import Footer from "./components/Footer.js";
 import Header from "./components/Header.js";
 import PokedexIcon from "./assets/icn_pokedex.svg";
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
-
+import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { PokemonsProvider } from './models/Pokemonsmodel.js';
 
@@ -84,46 +82,39 @@ const equipo = {
   slot6: abomasnow,
 };
 
-/*export default function App() {
-  return (
-    <View style={styles.container}>
-      <View style={styles.tbar}>
-        <Header/>
-      </View>
-
-      <ScrollView style={styles.main}>
-      <PokemonStats user={charizarde} />  
-      </ScrollView>
-      
-      <View style={styles.bbar}>
-        <Footer/>
-      </View>
-
-    </View>
-      //<UserProfile user={charizardo} />
-      //<Pokedex />
-      //<ResTeam user={equipo} />
-      //<EquipoResumen user={equipo} />
-  );
-}; */
 
 const Tab = createBottomTabNavigator();
 
-const UserprofilE =()=>{
+const Stack = createStackNavigator();
+
+const PokemonStatS =()=>{
   return(
     <PokemonStats />
   );
 };
 
-const PoketeaM =()=>{
+const UserProfilE =()=>{
   return(
-    <Poketeam user={equipo} />
+    <UserProfile />
   );
 };
 
-const PokedexIcono = ( {color, size}) => (
+const PoketeaM =()=>{
+  return(
+    <NavigationContainer>
+    <Poketeam user={equipo} />
+
+    <Stack.Navigator>
+      <Stack.Screen name="Pokedex" component={Pokedex}/>
+      <Stack.Screen name="Poke" component={PokemonStatS}/>
+    </Stack.Navigator>
+  </NavigationContainer>
+  );
+};
+
+/*const PokedexIcono = ( {color, size}) => (
     <PokedexIcon size={size} color={color} />
-);
+);*/
 
 export default function App() {
   return (
@@ -139,7 +130,7 @@ export default function App() {
       
         <Tab.Screen
           name="Poke"
-          component={UserprofilE}
+          component={PokemonStatS}
         />
         
         <Tab.Screen
@@ -160,6 +151,17 @@ export default function App() {
     </PokemonsProvider>
   );
 }
+
+function Pokedex(){
+  return(
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Pokemon" component={UserProfilE}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
 
 const styles = StyleSheet.create ({
   container: {
