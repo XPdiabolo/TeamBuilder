@@ -26,25 +26,27 @@ const PokeTeam = ({user}) =>{
 };*/
 
 const Pokemons =({user})=>{
-    const goToPokedex = () => {
+    /*const goToPokedex = () => {
         navigation.navigate("Pokedex");
     };
     
     const goToStatsPoke = () => {
         navigation.navigate("Poke");
     };
+
+    <View style={styles.button}>
+    <Button title="Go to Pokedex" onPress={goToPokedex}></Button>
+    </View>
+    <View style={styles.button}>
+    <Button title="Go to Pokemon" onPress={goToStatsPoke}></Button>
+    </View>*/
     
     return(
         <View style={styles.description}>
 
             <Text style={styles.titles}>Team 01</Text>
             
-            <View style={styles.button}>
-            <Button title="Go to Pokedex" onPress={goToPokedex}></Button>
-            </View>
-            <View style={styles.button}>
-            <Button title="Go to Pokemon" onPress={goToStatsPoke}></Button>
-            </View>
+
                 <View style={styles.content}>
                     <View style={styles.grup1}>
 
