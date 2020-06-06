@@ -87,11 +87,6 @@ const Tab = createBottomTabNavigator();
 
 const Stack = createStackNavigator();
 
-const PokemonStatS =()=>{
-  return(
-    <PokemonStats />
-  );
-};
 
 const UserProfilE =()=>{
   return(
@@ -143,7 +138,7 @@ export default function App() {
       
         <Tab.Screen
           name="Poke"
-          component={PokemonStatS}
+          component={PokemonStats}
         />
         
         <Tab.Screen
