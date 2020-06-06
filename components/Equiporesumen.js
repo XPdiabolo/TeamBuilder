@@ -158,19 +158,7 @@ const styles = StyleSheet.create({
         alignItems: "center",        
         flexDirection: "column",
     },
-    grup1:{ 
-        
-               
-        flexDirection: "row",
-        //alignItems: "center",
-        justifyContent: "center"
 
-    },
-    grup1text:{
-        flexDirection: "row",
-        
-        position:"relative",
-    },
     header:{
         flex: 0.8,
         justifyContent: "center",
