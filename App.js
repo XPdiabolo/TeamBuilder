@@ -24,27 +24,27 @@ const Stack = createStackNavigator();
 
 
 
-/*function PoketeamPage() {
+function PoketeamPage() {
   return(
-    <Tab.Navigator>
+    <Stack.Navigator>
   
-    <Tab.Screen name="PokedexPage" component={Pokedex}/>
-    <Tab.Screen name="PokePage" component={PokemonStats}/>
-    <Tab.Screen name="AñadirPoke" component={Añadir}/>
+    <Stack.Screen name="PokedexPage" component={Pokedex}/>
+    <Stack.Screen name="PokePage" component={PokemonStats}/>
+    <Stack.Screen name="AñadirPoke" component={Añadir}/>
 
-  </Tab.Navigator>
+  </Stack.Navigator>
   );
 }
 
 function PokedexPage() {
   return(
-    <Tab.Navigator>
+    <Stack.Navigator>
 
-    <Tab.Screen name="PokemonPage" component={UserProfile}/>
+    <Stack.Screen name="PokemonPage" component={UserProfile}/>
 
-  </Tab.Navigator>
+  </Stack.Navigator>
   );
-}*/
+}
 
 
 
@@ -62,28 +62,28 @@ export default function App() {
 
     
     <NavigationContainer style={styles.navContainer}>
-      <Stack.Navigator initialRouteName="PokeTeamPage" screenOptions={{}}>
+      <Tab.Navigator initialRouteName="PokedexPage" screenOptions={{}}>
       
-        <Stack.Screen
+        <Tab.Screen
           name="PokePage"
           component={UserProfile}
         />
         
-        <Stack.Screen
+        <Tab.Screen
           name="PokedexPage"
           component={Pokedex}
           //navigationOptions={{ tabBarIcon: PokedexIcono.PokedexIcon }}
         />
-        <Stack.Screen
+        <Tab.Screen
           name="PokeTeamPage"
           component={Poketeam}
         />
 
-        <Stack.Screen
+        <Tab.Screen
           name="AñadirPoke"
           component={Añadir}
         />
-      </Stack.Navigator>
+      </Tab.Navigator>
     </NavigationContainer>
   
 
