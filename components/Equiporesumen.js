@@ -54,19 +54,19 @@ const Pokemons = ({ user, navigation }) => {
 
         <View style={styles.grup1}>
           <View style={styles.button1}>
-            <Button title="Add"   onPress={() => navigation.navigate('AñadirPoke', {slot: 1, setName:setName1})}/>
+            <Button title="Add"   onPress={() => navigation.navigate('AñadirPoke', {slot: 4, setName:setName1})}/>
           </View>
           <View style={styles.button2}>
             <Button title="Det" onPress={() => navigation.navigate('PokeStats', {pokename: equipo})}/>
           </View>
           <View style={styles.button1}>
-            <Button title="Add"   onPress={() => navigation.navigate('AñadirPoke', {slot: 2, setName:setName1})}/>
+            <Button title="Add"   onPress={() => navigation.navigate('AñadirPoke', {slot: 5, setName:setName1})}/>
           </View>
           <View style={styles.button2}>
             <Button title="Det" onPress={() => navigation.navigate('PokeStats', {pokename: equipo})}/>
           </View>
           <View style={styles.button1}>
-            <Button title="Add"   onPress={() => navigation.navigate('AñadirPoke', {slot: 3, setName:setName1})}/>
+            <Button title="Add"   onPress={() => navigation.navigate('AñadirPoke', {slot: 6, setName:setName1})}/>
           </View>
           <View style={styles.button2}>
             <Button title="Det" onPress={() => navigation.navigate('PokeStats', {pokename: equipo})}/>
