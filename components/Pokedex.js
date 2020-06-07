@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { StyleSheet, Image, Text, View, FlatList, ImageBackground, ScrollView, ActivityIndicator, TextInput } from 'react-native';
+import { StyleSheet, Image, Text, View, FlatList, ImageBackground, ScrollView, ActivityIndicator, TextInput, Button } from 'react-native';
 import { PokemonsProvider, PokemonsContext } from '../models/Pokemonsmodel';
 import { DetailsProvider, DetailsContext } from '../models/DetailsModel';
 import { observer } from 'mobx-react';
@@ -33,13 +33,17 @@ const GeneratePokemons = observer(() => {  // (length) entre los dos =
   )
 });
 
-const renderItem = ({ item }) => {
+const renderItem = ({ item, navigation }) => {
   const url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"; //https://img.pokemondb.net/sprites/x-y/normal/
   const number = item.url.substr(34, 37);
   const numberdef = number.slice(0,-1);
+  const goToPokemon = () =>{
+    navigation.navigate("PokemonPage");
+  };
 
   return <View style={styles.box}>
     <Text style={styles.pokedexName}>Nº {numberdef} {item.name.toUpperCase(1)} <Image source={{uri : url+numberdef+".png"}}  style={styles.sprite}/> </Text>
+    <Button title="Go to Pokemon" onPress={goToPokemon}></Button>
     
   </View>
 };

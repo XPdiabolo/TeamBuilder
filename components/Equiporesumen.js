@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Image, Text, View, ImageBackground, TouchableWithoutFeedback, Picker, TouchableOpacity } from 'react-native';
+import { StyleSheet, Image, Text, View, ImageBackground, TouchableWithoutFeedback, Picker, TouchableOpacity, Button } from 'react-native';
 import Slider from '@react-native-community/slider';
 
 
@@ -24,28 +24,28 @@ const PokeTeam = ({user}) =>{
     );
 };*/
 
-const Pokemons =({user})=>{
-    /*const goToPokedex = () => {
-        navigation.navigate("Pokedex");
+const Pokemons =({user, navigation})=>{
+    const goToPokedex = () => {
+        navigation.navigate("PokedexPage");
     };
     
     const goToStatsPoke = () => {
-        navigation.navigate("Poke");
+        navigation.navigate("PokePage");
     };
 
-    <View style={styles.button}>
-    <Button title="Go to Pokedex" onPress={goToPokedex}></Button>
-    </View>
-    <View style={styles.button}>
-    <Button title="Go to Pokemon" onPress={goToStatsPoke}></Button>
-    </View>*/
+
     
     return(
         <View style={styles.description}>
 
             <Text style={styles.titles}>Team 01</Text>
             
-                
+    <View style={styles.button}>
+    <Button title="Go to Pokedex" onPress={goToPokedex}></Button>
+    </View>
+    <View style={styles.button}>
+    <Button title="Go to Pokemon" onPress={goToStatsPoke}></Button>
+    </View>
                 <View style={styles.content}>
                     <View style={styles.grup1}>
 
