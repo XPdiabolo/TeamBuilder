@@ -30,60 +30,56 @@ const Pokemons = ({ user, navigation }) => {
   return (
     <View style={styles.description}>
       <Text style={styles.titles}>Team 01</Text>
-
-      <View style={styles.button}>
-        <Button
-          title="Go to Pokedex"   onPress={() => navigation.navigate('AñadirPoke', {slot: 1, setName:setName1})}/>
-      </View>
-      <View style={styles.button}>
-        <Button title="Go to Pokemon" onPress={() => navigation.navigate('PokeStats', {pokename: equipo})}/>
-      </View>
-      <View style={styles.content}>
         <View style={styles.grup1}>
-          <TouchableOpacity title="Go to Pokedex"   onPress={() => navigation.navigate('AñadirPoke')}>
-            <View style={styles.button}>
-              <Pokemon />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Añadir</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Añadir</Text>
-            </View>
-          </TouchableOpacity>
+          <View style={styles.button1}>
+            <Button title="Add"   onPress={() => navigation.navigate('AñadirPoke', {slot: 1, setName:setName1})}/>
+          </View>
+          <View style={styles.button2}>
+            <Button title="Det" onPress={() => navigation.navigate('PokeStats', {pokename: equipo})}/>
+          </View>
+          <View style={styles.button1}>
+            <Button title="Add"   onPress={() => navigation.navigate('AñadirPoke', {slot: 2, setName:setName1})}/>
+          </View>
+          <View style={styles.button2}>
+            <Button title="Det" onPress={() => navigation.navigate('PokeStats', {pokename: equipo})}/>
+          </View>
+          <View style={styles.button1}>
+            <Button title="Add"   onPress={() => navigation.navigate('AñadirPoke', {slot: 3, setName:setName1})}/>
+          </View>
+          <View style={styles.button2}>
+            <Button title="Det" onPress={() => navigation.navigate('PokeStats', {pokename: equipo})}/>
+          </View>
         </View>
 
         <View style={styles.grup1}>
-          <TouchableOpacity>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Añadir</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Añadir</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Añadir</Text>
-            </View>
-          </TouchableOpacity>
+          <View style={styles.button1}>
+            <Button title="Add"   onPress={() => navigation.navigate('AñadirPoke', {slot: 1, setName:setName1})}/>
+          </View>
+          <View style={styles.button2}>
+            <Button title="Det" onPress={() => navigation.navigate('PokeStats', {pokename: equipo})}/>
+          </View>
+          <View style={styles.button1}>
+            <Button title="Add"   onPress={() => navigation.navigate('AñadirPoke', {slot: 2, setName:setName1})}/>
+          </View>
+          <View style={styles.button2}>
+            <Button title="Det" onPress={() => navigation.navigate('PokeStats', {pokename: equipo})}/>
+          </View>
+          <View style={styles.button1}>
+            <Button title="Add"   onPress={() => navigation.navigate('AñadirPoke', {slot: 3, setName:setName1})}/>
+          </View>
+          <View style={styles.button2}>
+            <Button title="Det" onPress={() => navigation.navigate('PokeStats', {pokename: equipo})}/>
+          </View>
         </View>
-      </View>
     </View>
   );
 };
 
-const Pokemon =(item) =>{
+/*const Pokemon =(item) =>{
   return(
     <View><Text>Name</Text></View>
   );
-};
+};*/
 
 const Measures = ({ user }) => {
   return (
@@ -258,11 +254,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "white",
   },
-  button: {
-    marginLeft: 40,
-    marginRight: 40,
-    paddingTop: 35,
-    paddingBottom: 35,
-    backgroundColor: 'red'
+  button1: {
+    paddingLeft: 15,
+    paddingTop: 30,
+    paddingBottom: 30,
+   
+  },
+  button2: {
+    paddingRight: 15,
+    paddingTop: 30,
+    paddingBottom: 30,
+   
   },
 });
