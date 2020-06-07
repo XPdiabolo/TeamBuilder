@@ -16,6 +16,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
+
 const PokeTeam = ({ user, navigation }) => {
   return (
     <ImageBackground
@@ -46,6 +47,21 @@ const Pokemons = ({ user, navigation }) => {
     navigation.navigate("PokePage");
   };
 
+  const equipo={
+    poke1n: null,
+    poke1i: null,
+    poke2n: null,
+    poke2i: null,
+    poke3n: null,
+    poke3i: null,
+    poke4n: null,
+    poke4i: null,
+    poke5n: null,
+    poke5i: null,
+    poke6n: null,
+    poke6i: null,
+  }
+
   return (
     <View style={styles.description}>
       <Text style={styles.titles}>Team 01</Text>
@@ -56,19 +72,13 @@ const Pokemons = ({ user, navigation }) => {
       </View>
       <View style={styles.button}>
         <Button title="Go to Pokemon" onPress={() => navigation.navigate('PokePage')}/>
-      </View>
-      
-      
-      
-      
-      
-      
+      </View>    
       
       <View style={styles.content}>
         <View style={styles.grup1}>
-          <TouchableOpacity>
+          <TouchableOpacity title="Go to Pokedex"   onPress={() => navigation.navigate('AñadirPoke', {numbereqres: 1})}>
             <View style={styles.button}>
-              <Text style={styles.buttonText}>Añadir</Text>
+              <Pokemon />
             </View>
           </TouchableOpacity>
           <TouchableOpacity>
@@ -102,6 +112,12 @@ const Pokemons = ({ user, navigation }) => {
         </View>
       </View>
     </View>
+  );
+};
+
+const Pokemon =(item) =>{
+  return(
+    <View><Text>Name</Text></View>
   );
 };
 
@@ -283,5 +299,6 @@ const styles = StyleSheet.create({
     marginRight: 40,
     paddingTop: 35,
     paddingBottom: 35,
+    backgroundColor: 'red'
   },
 });

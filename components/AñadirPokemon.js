@@ -4,8 +4,6 @@ import { PokemonsProvider, PokemonsContext } from '../models/Pokemonsmodel';
 import { DetailsProvider, DetailsContext } from '../models/DetailsModel';
 import { observer } from 'mobx-react';
 
-const flag = null;
-
 const GeneratePokemons = observer(() => {  // (length) entre los dos =
   const pokemons = useContext(PokemonsContext);
 
@@ -34,16 +32,17 @@ const GeneratePokemons = observer(() => {  // (length) entre los dos =
 });
 
 const renderItem = ({ item, navigation }) => {
+  //const numberslot = navigation.navigate.getParam('numbereqres');
   const url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"; //https://img.pokemondb.net/sprites/x-y/normal/
   const number = item.url.substr(34, 37);
   const numberdef = number.slice(0,-1);
   const goToPokemon = () =>{
-    navigation.navigate("PokemonPage");
+    navigation.navigate("PokeTeamPage");
   };
 
   return <View style={styles.box}>
-    <Text style={styles.pokedexName}>Nº {numberdef} {item.name.toUpperCase(1)} <Image source={{uri : url+numberdef+".png"}}  style={styles.sprite}/> </Text>
-    <Button title="Go to Pokemon" onPress={goToPokemon}></Button>
+    <Text style={styles.pokedexName}>Nº {numberslot} {numberdef} {item.name.toUpperCase(1)} <Image source={{uri : url+numberdef+".png"}}  style={styles.sprite}/> </Text>
+    <Button title="Add pokemon" onPress={goToPokemon}></Button>
     
   </View>
 };
