@@ -39,7 +39,7 @@ const PokeTeam = ({ user, navigation }) => {
 
 const Pokemons = ({ user, navigation }) => {
   const goToPokedex = () => {
-    navigation.navigate("PokedexPage");
+    navigation.navigate("AñadirPoke");
   };
 
   const goToStatsPoke = () => {
@@ -52,7 +52,7 @@ const Pokemons = ({ user, navigation }) => {
 
       <View style={styles.button}>
         <Button
-          title="Go to Pokedex"   onPress={() => navigation.navigate('PokedexPage')}/>
+          title="Go to Pokedex"   onPress={() => navigation.navigate('AñadirPoke')}/>
       </View>
       <View style={styles.button}>
         <Button title="Go to Pokemon" onPress={() => navigation.navigate('PokePage')}/>

@@ -15,7 +15,9 @@ const GeneratePokemons = observer(() => {  // (length) entre los dos =
 
   if (pokemons.pokemon == null) {
     return (
+      
       <View>
+        
         <ActivityIndicator size="large"
         lightTheme round editable={true}/>
       </View>
@@ -41,11 +43,12 @@ const renderItem = ({ item, navigation }) => {
     navigation.navigate("PokemonPage");
   };
 
-  return <View style={styles.box}>
+  return (<View style={styles.box}>
+    
     <Text style={styles.pokedexName}>Nº {numberdef} {item.name.toUpperCase(1)} <Image source={{uri : url+numberdef+".png"}}  style={styles.sprite}/> </Text>
     <Button title="Go to Pokemon" onPress={goToPokemon}></Button>
     
-  </View>
+  </View>);
 };
 //Pokemon database https://pokemondb.net/sprites/bulbasaur
 //https://pokemondb.net/pokedex/all

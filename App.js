@@ -4,6 +4,7 @@ import PokemonStats from "./components/StatsPokeTeam.js";
 import Poketeam from "./components/Equiporesumen.js";
 import Pokedex from "./components/Pokedex.js";
 import Header from "./components/Header.js";
+import Añadir from './components/AñadirPokemon.js';
 import PokedexIcon from "./assets/icn_pokedex.svg";
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import "react-native-gesture-handler";
@@ -29,6 +30,7 @@ function PoketeamPage() {
   
     <Stack.Screen name="PokedexPage" component={Pokedex}/>
     <Stack.Screen name="PokePage" component={PokemonStats}/>
+    <Stack.Screen name="AñadirPoke" component={Añadir}/>
 
   </Stack.Navigator>
   );
@@ -75,6 +77,11 @@ export default function App() {
         <Tab.Screen
           name="PokeTeamPage"
           component={Poketeam}
+        />
+
+        <Tab.Screen
+          name="AñadirPoke"
+          component={Añadir}
         />
       </Tab.Navigator>
     </NavigationContainer>
