@@ -11,7 +11,7 @@ import { observer } from 'mobx-react';
 const RenderDetails = observer(() =>{
 
     const details = useContext(DetailsContext);
-    const pokemonexemple = "mewtwo";
+    const pokemonexemple = "charizard";
   
     useEffect(() => {
       details.loadDetails(pokemonexemple);
@@ -250,7 +250,7 @@ const styles = StyleSheet.create({
     Shiny:{
         //borderTopRightRadius:10,
         borderRadius: 10,
-        flex: 1,
+        flex: 0.5,
         flexDirection: "column",
         marginRight: 15,
         marginLeft: 15,
@@ -303,7 +303,7 @@ const styles = StyleSheet.create({
         //paddingBottom: 5,
         //paddingTop: 5,
         //paddingLeft: 12,
-        borderRadius: 10
+        borderRadius: 10,
     },
     measdet:{
         flex: 1,
@@ -339,7 +339,7 @@ const styles = StyleSheet.create({
     Moves:{
         //borderTopRightRadius:10,
         borderRadius: 10,
-        flex: 0.5,
+        flex: 0.3,
         flexDirection: "column",
         marginRight: 15,
         marginLeft: 15,
@@ -351,6 +351,7 @@ const styles = StyleSheet.create({
     },
 
     movesText:{
+        flex: 0.6,
         flexDirection: "row",
         justifyContent: "space-around",
         paddingTop: 5
