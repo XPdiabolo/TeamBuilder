@@ -39,6 +39,7 @@ const UserProfile = (user) =>{
             <Name user={user} />
             <Profile user={user} />
             <Description user={user} />
+            <Moves user={user} />
             <Shiny user={user} />
         </ImageBackground>
         </DetailsProvider>
@@ -115,6 +116,30 @@ const Description =({user})=>{
     );
 };
 
+const Moves =({user})=>{
+   
+    return(
+        <View style={styles.Moves}>
+            <Text style={styles.titles}>Moves</Text>
+
+            <View style={styles.movesText}>
+            
+                <Text style={styles.contentMoves}><Text>{user.user.moves[0].move.name}</Text></Text>
+                <Text style={styles.contentMoves}><Text>{user.user.moves[1].move.name}</Text></Text>
+
+            </View>
+
+            <View style={styles.movesText}>
+                
+                <Text style={styles.contentMoves}><Text>{user.user.moves[2].move.name}</Text></Text>
+                <Text style={styles.contentMoves}><Text>{user.user.moves[3].move.name}</Text></Text>
+
+            </View>
+
+        </View>
+    );
+};
+
 const Shiny =({user})=>{
    
     return(
@@ -125,6 +150,12 @@ const Shiny =({user})=>{
                 <Image source={{ uri : user.user.sprites.front_shiny }}  style={styles.sprite}/>
 
                 <Image source={{ uri : user.user.sprites.back_shiny }}  style={styles.sprite}/>
+
+            </View>
+
+            <View style={styles.SpritesShinyText}>
+                <Text style={styles.content}>Front</Text>
+                <Text style={styles.contentBack}>Back</Text>
 
             </View>
 
@@ -219,9 +250,11 @@ const styles = StyleSheet.create({
     Shiny:{
         //borderTopRightRadius:10,
         borderRadius: 10,
-        flex: 0.5,
+        flex: 1,
+        flexDirection: "column",
         marginRight: 15,
         marginLeft: 15,
+        marginBottom: 15,
         //paddingLeft: 15,
         //paddingRight: 15,
         backgroundColor: 'white'
@@ -295,5 +328,44 @@ const styles = StyleSheet.create({
     SpritesShiny:{
         flexDirection: "row",
         paddingLeft: 25,
-    }
+        
+    },
+
+    Moves:{
+        //borderTopRightRadius:10,
+        borderRadius: 10,
+        flex: 0.5,
+        flexDirection: "column",
+        marginRight: 15,
+        marginLeft: 15,
+        marginBottom: 15,
+        //paddingLeft: 15,
+        //paddingRight: 15,
+        paddingBottom: 1,
+        backgroundColor: 'white'
+    },
+
+    movesText:{
+        flexDirection: "row",
+        paddingLeft: 100,
+        paddingBottom: 1,
+    },
+
+    SpritesShinyText:{
+        flexDirection: "row",
+        paddingLeft: 80,
+        
+    },
+
+    contentBack:{
+        paddingLeft: 100,
+        paddingRight: 15,
+        paddingTop: 10,
+        paddingBottom: 20
+    },
+
+    contentMoves:{
+
+        justifyContent: "space-evenly"
+    },
 })
