@@ -47,19 +47,7 @@ const Pokemons = ({ user, navigation }) => {
     poke6i: null,
   }
 
-  return (
-    <View style={styles.description}>
-      <Text style={styles.titles}>Team 01</Text>
-
-      <View style={styles.button}>
-        <Button
-          title="Go to Pokedex"   onPress={() => navigation.navigate('AñadirPoke')}/>
-      </View>
-      <View style={styles.button}>
-
-        <Button title="Go to Pokemon" onPress={() => navigation.navigate('PokeStats')}/>
-      </View>
-      <View style={styles.content}>
+  /*<View style={styles.content}>
         <View style={styles.grup1}>
           <TouchableOpacity title="Go to Pokedex"   onPress={() => navigation.navigate('AñadirPoke', {numbereqres: 1})}>
             <View style={styles.button}>
@@ -95,14 +83,67 @@ const Pokemons = ({ user, navigation }) => {
             </View>
           </TouchableOpacity>
         </View>
+      </View>*/
+  return (
+    <View style={styles.description}>
+      <Text style={styles.titles}>Team 01</Text>
+   
+    <View style= {styles.grup1}>
+      <View style={styles.button1}>
+        <Button
+          title="Add" onPress={() => navigation.navigate('AñadirPoke')}/>
       </View>
+      <View style={styles.button2}>
+        <Button title="Det" onPress={() => navigation.navigate('PokeStats')}/>
+      </View>
+      <View style={styles.button1}>
+        <Button
+          title="Add" onPress={() => navigation.navigate('AñadirPoke')}/>
+      </View>
+      <View style={styles.button2}>
+        <Button title="Det" onPress={() => navigation.navigate('PokeStats')}/>
+      </View>
+      <View style={styles.button1}>
+        <Button
+          title="Add" onPress={() => navigation.navigate('AñadirPoke')}/>
+      </View>
+      <View style={styles.button2}>
+        <Button title="Det" onPress={() => navigation.navigate('PokeStats')}/>
+      </View>
+    </View>
+
+    <View style= {styles.grup1}>
+      <View style={styles.button1}>
+        <Button
+          title="Add" onPress={() => navigation.navigate('AñadirPoke')}/>
+      </View>
+      <View style={styles.button2}>
+        <Button title="Det" onPress={() => navigation.navigate('PokeStats')}/>
+      </View>
+      <View style={styles.button1}>
+        <Button
+          title="Add" onPress={() => navigation.navigate('AñadirPoke')}/>
+      </View>
+      <View style={styles.button2}>
+        <Button title="Det" onPress={() => navigation.navigate('PokeStats')}/>
+      </View>
+      <View style={styles.button1}>
+        <Button
+          title="Add" onPress={() => navigation.navigate('AñadirPoke')}/>
+      </View>
+      <View style={styles.button2}>
+        <Button title="Det" onPress={() => navigation.navigate('PokeStats')}/>
+      </View>
+    </View>
+
+
     </View>
   );
 };
 
 const Pokemon =(item) =>{
   return(
-    <View><Text>Name</Text></View>
+    <View><Text>Añadir</Text></View>
   );
 };
 
@@ -279,11 +320,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "white",
   },
-  button: {
-    marginLeft: 40,
-    marginRight: 40,
+  button1: {
+    paddingLeft:15,
     paddingTop: 35,
     paddingBottom: 35,
-    backgroundColor: 'red'
+    flexDirection: 'row',
+  },
+  button2: {
+    paddingRight:15,
+    paddingTop: 35,
+    paddingBottom: 35,
+    flexDirection: 'row',
   },
 });
