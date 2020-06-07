@@ -44,11 +44,12 @@ const PokemonItem = ({ item, navigation }) => {
     <View style={styles.box}>      
       <Text style={styles.pokedexName}>
         Nº {numberdef} {item.name.toUpperCase(1)}{" "}
-        <Image
+        {" "}
+      </Text>
+      <Image
           source={{ uri: url + numberdef + ".png" }}
           style={styles.sprite}
-        />{" "}
-      </Text>
+        />
       <Button title="Go to Pokemon" onPress={goToPokemon}></Button>
     </View>
   );
@@ -106,7 +107,7 @@ const styles = StyleSheet.create({
     backgroundColor: "pink",
   },
   box: {
-    backgroundColor: "white",
+    backgroundColor: '#4B4B4B',
     flex: 1,
     alignItems: "center",
     //justifyContent: "center",
@@ -114,8 +115,8 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     paddingTop: 1,
     paddingBottom: 10,
-    paddingLeft: 90,
-    paddingRight: 90,
+    //paddingLeft: 90,
+    //paddingRight: 90,
     borderRadius: 25,
   },
   pokedexName: {
@@ -127,7 +128,7 @@ const styles = StyleSheet.create({
     //paddingRight: 20,
     fontSize: 16,
     fontWeight: "bold",
-    color: "#424242",
+    color: "white",
     //alignItems: "left",
   },
   scroll: {
@@ -146,7 +147,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     position: "relative",
-    margin: 10,
+    //margin: 10,
   },
   textinput: {
     height: 30,

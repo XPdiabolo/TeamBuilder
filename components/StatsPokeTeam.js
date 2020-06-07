@@ -106,11 +106,17 @@ const Item = observer(() =>{
 
 //<Dropdown label='select' data={allobjs} textColor="black" style={styles.dropdown}/>
     const datos = [{
-        value: 'Banana',
+        value: 'Focus Sash',
       }, {
-        value: 'Mango',
+        value: 'Choice Scarf',
       }, {
-        value: 'Pearl',
+        value: 'Citrus Berry',
+      }, {
+        value: 'Assault Vest',
+      }, {
+        value: 'Choice Specs',
+      }, {
+        value: 'Leftovers',
       }];
 
     return(
