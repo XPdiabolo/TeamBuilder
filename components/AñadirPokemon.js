@@ -4,7 +4,7 @@ import { ActivityIndicator, Button, FlatList, Image, ImageBackground, ScrollView
 import { DetailsProvider } from "../models/DetailsModel";
 import { PokemonsContext, PokemonsProvider } from "../models/Pokemonsmodel";
 
-const GeneratePokemons = observer(({navigation}) => {
+const GeneratePokemons = observer(({navigation, setName}) => {
   // (length) entre los dos =
   const pokemons = useContext(PokemonsContext);
 
@@ -23,18 +23,18 @@ const GeneratePokemons = observer(({navigation}) => {
     <View>
 
       <TextInput style={styles.textinput} />
-      <FlatList data={pokemons.pokemon} renderItem={(props)=><PokemonItem {...props} navigation={navigation}/>} />
+      <FlatList data={pokemons.pokemon} renderItem={(props)=><PokemonItem {...props} setName={setName} navigation={navigation}/>} />
     </View>
   );
 });
 
-const PokemonItem = ({ item,navigation}) => {
+const PokemonItem = ({ item,navigation, setName}) => {
   const url =
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"; //https://img.pokemondb.net/sprites/x-y/normal/
   const number = item.url.substr(34, 37);
   const numberdef = number.slice(0, -1);
   const goToPokemon = () => {
-    navigation.back(); //Aqui s'indica a la pagina que va
+    navigation.goBack({setName1:item.name}); //Aqui s'indica a la pagina que va
   };
 
   return (
@@ -42,7 +42,7 @@ const PokemonItem = ({ item,navigation}) => {
     
     <View style={styles.box}>      
       <Text style={styles.pokedexName}>
-        Nº {numberdef} {item.name.toUpperCase(1)}{" "}
+  Nº {numberdef} {item.name.toUpperCase(1)}{" "}
         <Image
           source={{ uri: url + numberdef + ".png" }}
           style={styles.sprite}
@@ -55,7 +55,8 @@ const PokemonItem = ({ item,navigation}) => {
 //Pokemon database https://pokemondb.net/sprites/bulbasaur
 //https://pokemondb.net/pokedex/all
 
-export default function Pokedex({navigation}) {
+export default function Pokedex({navigation, route}) {
+  const {setName} = route.params;
   return (
     <PokemonsProvider>
       <DetailsProvider>
@@ -64,7 +65,7 @@ export default function Pokedex({navigation}) {
           source={require("../assets/background-pdx.png")}
         >
           <ScrollView style={styles.scroll}>
-            <GeneratePokemons navigation={navigation}/>
+            <GeneratePokemons setName={setName} navigation={navigation}/>
           </ScrollView>
         </ImageBackground>
       </DetailsProvider>
