@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Button, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 
@@ -16,24 +16,16 @@ const PokeTeam = ({ user, navigation}) => {
   );
 };
 
-/*const Name =({user})=>{
-    return(
-        <View style={styles.name}>
-            
-        </View>
-    );
-};*/
-
 const Pokemons = ({ user, navigation }) => {
-  const goToPokedex = () => {
-    navigation.navigate("AñadirPoke");
-  };
 
-  const goToStatsPoke = () => {
-    navigation.navigate("PokePage");
-  };
+  const equipo = "mewtwo";
 
-  const equipo = 'charizard';
+  const [name1, setName1] = useState('');
+  const [name2, setName2] = useState('');
+  const [name3, setName3] = useState('');
+  const [name4, setName4] = useState('');
+  const [name5, setName5] = useState('');
+  const [name6, setName6] = useState('');
 
   return (
     <View style={styles.description}>
@@ -41,7 +33,7 @@ const Pokemons = ({ user, navigation }) => {
 
       <View style={styles.button}>
         <Button
-          title="Go to Pokedex"   onPress={() => navigation.navigate('AñadirPoke')}/>
+          title="Go to Pokedex"   onPress={() => navigation.navigate('AñadirPoke', {slot: 1, setName:setName1})}/>
       </View>
       <View style={styles.button}>
         <Button title="Go to Pokemon" onPress={() => navigation.navigate('PokeStats', {pokename: equipo})}/>

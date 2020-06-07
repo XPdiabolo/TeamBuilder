@@ -34,7 +34,7 @@ const PokemonItem = ({ item,navigation}) => {
   const number = item.url.substr(34, 37);
   const numberdef = number.slice(0, -1);
   const goToPokemon = () => {
-    navigation.navigate("PokeTeamPage"); //Aqui s'indica a la pagina que va
+    navigation.back(); //Aqui s'indica a la pagina que va
   };
 
   return (
