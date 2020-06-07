@@ -11,7 +11,7 @@ import { observer } from 'mobx-react';
 const RenderDetails = observer(() =>{
 
     const details = useContext(DetailsContext);
-    const pokemonexemple = "mew";
+    const pokemonexemple = "mewtwo";
   
     useEffect(() => {
       details.loadDetails(pokemonexemple);
@@ -50,7 +50,7 @@ const UserProfile = (user) =>{
 const Name =({user})=>{
     return(
         <View style={styles.name}>
-            <Text style={styles.number} >Nº {user.poknum}</Text><Text style={styles.pokename}>{user.user.name}</Text>
+            <Text style={styles.pokename} >Nº {user.user.id}</Text><Text style={styles.pokename}>{user.user.name.toUpperCase(1)}</Text>
         </View>
     );
 };
@@ -147,9 +147,9 @@ const Shiny =({user})=>{
             <Text style={styles.titles}>Shiny</Text>
 
             <View style={styles.SpritesShiny}>
-                <Image source={{ uri : user.user.sprites.front_shiny }}  style={styles.sprite}/>
+                <Image source={{ uri : user.user.sprites.front_shiny }}  style={styles.spritesh}/>
 
-                <Image source={{ uri : user.user.sprites.back_shiny }}  style={styles.sprite}/>
+                <Image source={{ uri : user.user.sprites.back_shiny }}  style={styles.spritesh}/>
 
             </View>
 
@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         marginRight: 15,
         marginLeft: 15,
-        marginBottom: 15,
+        //marginBottom: 15,
         //paddingLeft: 15,
         //paddingRight: 15,
         backgroundColor: 'white'
@@ -283,11 +283,16 @@ const styles = StyleSheet.create({
         paddingBottom: 20
     },
     sprite:{
-        margin: 20,
+        //margin: 20,
+        //height: 120,
+        //width: 120,
+        flex: 1,
+        resizeMode: "contain"
+    },
+    spritesh:{
+        marginTop: 0,
         height: 120,
         width: 120,
-
-  
     },
     measures:{
         flexDirection: 'column',
@@ -304,7 +309,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         justifyContent: "center",
-        alignItems: "center"
+        //alignItems: "center"
     },
     measwidth:{
         alignItems: "center",
@@ -327,7 +332,7 @@ const styles = StyleSheet.create({
     },
     SpritesShiny:{
         flexDirection: "row",
-        paddingLeft: 25,
+        justifyContent: "space-around"
         
     },
 
@@ -347,13 +352,15 @@ const styles = StyleSheet.create({
 
     movesText:{
         flexDirection: "row",
-        paddingLeft: 100,
-        paddingBottom: 1,
+        justifyContent: "space-around",
+        paddingTop: 5
+        //paddingLeft: 15,
+        //paddingRight: 15
     },
 
     SpritesShinyText:{
         flexDirection: "row",
-        paddingLeft: 80,
+        justifyContent: "space-evenly",
         
     },
 
