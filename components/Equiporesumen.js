@@ -2,7 +2,8 @@ import React from "react";
 import { Button, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 
-const PokeTeam = ({ user, navigation }) => {
+const PokeTeam = ({ user, navigation}) => {
+
   return (
     <ImageBackground
       style={styles.page}
@@ -32,20 +33,7 @@ const Pokemons = ({ user, navigation }) => {
     navigation.navigate("PokePage");
   };
 
-  const equipo={
-    poke1n: null,
-    poke1i: null,
-    poke2n: null,
-    poke2i: null,
-    poke3n: null,
-    poke3i: null,
-    poke4n: null,
-    poke4i: null,
-    poke5n: null,
-    poke5i: null,
-    poke6n: null,
-    poke6i: null,
-  }
+  const equipo = 'charizard';
 
   return (
     <View style={styles.description}>
@@ -56,12 +44,11 @@ const Pokemons = ({ user, navigation }) => {
           title="Go to Pokedex"   onPress={() => navigation.navigate('AñadirPoke')}/>
       </View>
       <View style={styles.button}>
-
-        <Button title="Go to Pokemon" onPress={() => navigation.navigate('PokeStats')}/>
+        <Button title="Go to Pokemon" onPress={() => navigation.navigate('PokeStats', {pokename: equipo})}/>
       </View>
       <View style={styles.content}>
         <View style={styles.grup1}>
-          <TouchableOpacity title="Go to Pokedex"   onPress={() => navigation.navigate('AñadirPoke', {numbereqres: 1})}>
+          <TouchableOpacity title="Go to Pokedex"   onPress={() => navigation.navigate('AñadirPoke')}>
             <View style={styles.button}>
               <Pokemon />
             </View>
