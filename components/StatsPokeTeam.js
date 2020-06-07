@@ -7,13 +7,14 @@ import { DetailsContext, DetailsProvider } from '../models/DetailsModel';
 import { ObjsContext, ObjsProvider } from '../models/ObjectsModel';
 
 
-const RenderDetails = observer(() =>{
+const RenderDetails = observer(({navigation, route}) =>{
 
     const details = useContext(DetailsContext);
-    const pokemonexemple = "articuno";
+    const pokemonexemple = 'articuno';
+    const {pokename} = route.params;
   
     useEffect(() => {
-      details.loadDetails(pokemonexemple);
+      details.loadDetails(pokename);
     }, []);  
   
     if (details.detail == null) {

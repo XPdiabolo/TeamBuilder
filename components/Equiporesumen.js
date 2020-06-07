@@ -2,7 +2,8 @@ import React from "react";
 import { Button, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 
-const PokeTeam = ({ user, navigation }) => {
+const PokeTeam = ({ user, navigation}) => {
+
   return (
     <ImageBackground
       style={styles.page}
@@ -32,59 +33,11 @@ const Pokemons = ({ user, navigation }) => {
     navigation.navigate("PokePage");
   };
 
-  const equipo={
-    poke1n: null,
-    poke1i: null,
-    poke2n: null,
-    poke2i: null,
-    poke3n: null,
-    poke3i: null,
-    poke4n: null,
-    poke4i: null,
-    poke5n: null,
-    poke5i: null,
-    poke6n: null,
-    poke6i: null,
-  }
+  const equipo = 'charizard';
 
-  /*<View style={styles.content}>
-        <View style={styles.grup1}>
-          <TouchableOpacity title="Go to Pokedex"   onPress={() => navigation.navigate('AñadirPoke', {numbereqres: 1})}>
-            <View style={styles.button}>
-              <Pokemon />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Añadir</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Añadir</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.grup1}>
-          <TouchableOpacity>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Añadir</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Añadir</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Añadir</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-      </View>*/
+ 
   return (
+    
     <View style={styles.description}>
       <Text style={styles.titles}>Team 01</Text>
    

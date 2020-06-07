@@ -4,12 +4,8 @@ import { ActivityIndicator, Button, FlatList, Image, ImageBackground, ScrollView
 import { DetailsProvider } from "../models/DetailsModel";
 import { PokemonsContext, PokemonsProvider } from "../models/Pokemonsmodel";
 
-
-const flag = null;
-
 const GeneratePokemons = observer(({navigation}) => {
   // (length) entre los dos =
-
   const pokemons = useContext(PokemonsContext);
 
   useEffect(() => {
@@ -32,13 +28,13 @@ const GeneratePokemons = observer(({navigation}) => {
   );
 });
 
-const PokemonItem = ({ item, navigation }) => {
+const PokemonItem = ({ item,navigation}) => {
   const url =
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"; //https://img.pokemondb.net/sprites/x-y/normal/
   const number = item.url.substr(34, 37);
   const numberdef = number.slice(0, -1);
   const goToPokemon = () => {
-    navigation.navigate("PokePage", {pokeName: item.name}); //Aqui s'indica a la pagina que va
+    navigation.navigate("PokeTeamPage"); //Aqui s'indica a la pagina que va
   };
 
   return (
