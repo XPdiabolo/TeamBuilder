@@ -21,28 +21,28 @@ const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 
-const PoketeamPage =()=>{
+
+
+function PoketeamPage() {
   return(
     <Stack.Navigator>
   
-      <Stack.Screen name="PokedexPage" component={Pokedex}/>
-      <Stack.Screen name="PokePage" component={PokemonStats}/>
+    <Stack.Screen name="PokedexPage" component={Pokedex}/>
+    <Stack.Screen name="PokePage" component={PokemonStats}/>
 
-    </Stack.Navigator>
+  </Stack.Navigator>
   );
-}; 
+}
 
-const PokedexPage =()=>{
+function PokedexPage() {
   return(
-
     <Stack.Navigator>
 
-      <Stack.Screen name="PokemonPage" component={UserProfile}/>
+    <Stack.Screen name="PokemonPage" component={UserProfile}/>
 
-    </Stack.Navigator>
+  </Stack.Navigator>
   );
-
-};
+}
 
 
 

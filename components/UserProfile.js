@@ -109,8 +109,8 @@ const Measures = ({user}) => {
 const Description =({user})=>{
     return(
         <View style={styles.description}>
-            <Text style={styles.titles}>Description</Text>
-            <Text style={styles.content}>{user.user.height} m</Text>
+            <Text style={styles.titles}>Ability</Text>
+            <Text style={styles.content}>{user.user.abilities.map(element=>element.ability.name)}</Text>
         </View>
     );
 };
@@ -123,7 +123,9 @@ const Shiny =({user})=>{
 
             <View style={styles.SpritesShiny}>
                 <Image source={{ uri : user.user.sprites.front_shiny }}  style={styles.sprite}/>
+
                 <Image source={{ uri : user.user.sprites.back_shiny }}  style={styles.sprite}/>
+
             </View>
 
         </View>
@@ -215,9 +217,9 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     },
     Shiny:{
-        borderTopRightRadius:10,
-        borderTopLeftRadius: 10,
-        flex: 2,
+        //borderTopRightRadius:10,
+        borderRadius: 10,
+        flex: 0.5,
         marginRight: 15,
         marginLeft: 15,
         //paddingLeft: 15,
@@ -292,6 +294,6 @@ const styles = StyleSheet.create({
     },
     SpritesShiny:{
         flexDirection: "row",
-
+        paddingLeft: 25,
     }
 })
