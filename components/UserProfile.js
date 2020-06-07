@@ -1,25 +1,25 @@
-
-//import { StyleSheet, Image, Text, View, TouchableWithoutFeedback } from 'react-native';
-import React, { useContext, useEffect } from 'react';
-//import Slider from '@react-native-community/slider';
-import { StyleSheet, Image, Text, View, ImageBackground, ActivityIndicator, StatusBarIOS } from 'react-native';
-import { DetailsProvider, DetailsContext } from '../models/DetailsModel';
 import { observer } from 'mobx-react';
-//import { Dropdown } from 'react-native-material-dropdown';
+import React, { useContext, useEffect } from 'react';
+import { ActivityIndicator, Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { DetailsContext, DetailsProvider } from '../models/DetailsModel';
 
-
-const RenderDetails = observer(() =>{
+const PokemonDetails = observer(({route}) =>{
 
     const details = useContext(DetailsContext);
-    const pokemonexemple = "charizard";
-  
+
+
+    const {pokeName} = route.params;
+
+
     useEffect(() => {
-      details.loadDetails(pokemonexemple);
-    }, []);  
+    
+    details.loadDetails(pokeName);
+    }, [pokeName]);  
   
     if (details.detail == null) {
       return (
         <View>
+            <Text>{pokeName}</Text>
           <ActivityIndicator size="large" />
         </View>
       )
@@ -162,26 +162,8 @@ const Shiny =({user})=>{
         </View>
     );
 };
-//<Image source={{uri : url+numberdef+".png"}}  style={styles.sprite}/>
 
-/*  const url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"; //https://img.pokemondb.net/sprites/x-y/normal/
-  const number = item.url.substr(34, 37);
-  const numberdef = number.slice(0,-1);*/
-
-
-
-
-
-  /*const Profile =({user})=>{
-    return(
-        <View style={styles.profile}>
-            <Image source={{ uri : user.user.avatar }}  style={styles.sprite}/>
-            <Measures user={user} />
-        </View>
-    );
-};*/
-
-export default RenderDetails
+export default PokemonDetails
 
 const styles = StyleSheet.create({
     page:{

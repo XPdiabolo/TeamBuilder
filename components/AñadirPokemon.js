@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from 'react';
-import { StyleSheet, Image, Text, View, FlatList, ImageBackground, ScrollView, ActivityIndicator, TextInput, Button } from 'react-native';
-import { PokemonsProvider, PokemonsContext } from '../models/Pokemonsmodel';
-import { DetailsProvider, DetailsContext } from '../models/DetailsModel';
 import { observer } from 'mobx-react';
+import React, { useContext, useEffect } from 'react';
+import { ActivityIndicator, Button, FlatList, Image, ImageBackground, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { DetailsProvider } from '../models/DetailsModel';
+import { PokemonsContext, PokemonsProvider } from '../models/Pokemonsmodel';
 
 const GeneratePokemons = observer(() => {  // (length) entre los dos =
   const pokemons = useContext(PokemonsContext);

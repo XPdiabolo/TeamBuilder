@@ -1,20 +1,5 @@
 import React from "react";
-import {
-  StyleSheet,
-  Image,
-  Text,
-  View,
-  ImageBackground,
-  TouchableWithoutFeedback,
-  Picker,
-  TouchableOpacity,
-  Button,
-  Navigator,
-} from "react-native";
-import Slider from "@react-native-community/slider";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Button, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 
 const PokeTeam = ({ user, navigation }) => {

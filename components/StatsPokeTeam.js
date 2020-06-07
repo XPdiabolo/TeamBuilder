@@ -1,10 +1,10 @@
+import { observer } from 'mobx-react';
 import React, { useContext, useEffect } from 'react';
 //import Slider from '@react-native-community/slider';
-import { StyleSheet, Image, Text, View, ImageBackground, ActivityIndicator, StatusBarIOS } from 'react-native';
-import { DetailsProvider, DetailsContext } from '../models/DetailsModel';
-import { ObjsProvider, ObjsContext } from '../models/ObjectsModel';
-import { observer } from 'mobx-react';
+import { ActivityIndicator, Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { Dropdown } from 'react-native-material-dropdown';
+import { DetailsContext, DetailsProvider } from '../models/DetailsModel';
+import { ObjsContext, ObjsProvider } from '../models/ObjectsModel';
 
 
 const RenderDetails = observer(() =>{

@@ -1,5 +1,5 @@
-import { observable, action } from "mobx";
-import React, { createContext} from "react";
+import { action, observable } from "mobx";
+import React, { createContext } from "react";
 
 class PokemonsModel{
     @observable pokemon = null;
