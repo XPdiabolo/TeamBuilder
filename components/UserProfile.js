@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
     Shiny:{
         //borderTopRightRadius:10,
         borderRadius: 10,
-        flex: 0.5,
+        flex: 1,
         flexDirection: "column",
         marginRight: 15,
         marginLeft: 15,
