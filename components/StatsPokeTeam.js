@@ -272,7 +272,5 @@ const styles = StyleSheet.create({
         
     },
     dropdown:{
-    }
-
-   
+    },
 })

@@ -31,8 +31,6 @@ const Pokemons = ({ user, navigation }) => {
     <View style={styles.description}>
       <Text style={styles.titles}>Team 01</Text>
 
-
-
         <View style={styles.grup1}>
           <View style={styles.button1}>
             <Button title="Add"   onPress={() => navigation.navigate('AñadirPoke', {slot: 1, setName:setName1})}/>
