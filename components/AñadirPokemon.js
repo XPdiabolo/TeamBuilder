@@ -48,7 +48,7 @@ const PokemonItem = ({ item,navigation}) => {
           style={styles.sprite}
         />{" "}
       </Text>
-      <Button title="Go to Pokemon" onPress={goToPokemon}></Button>
+      <Button title="Add Pokemon" onPress={goToPokemon}></Button>
     </View>
   );
 };
