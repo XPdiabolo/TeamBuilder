@@ -226,8 +226,8 @@ const styles = StyleSheet.create({
     },
     spritesh:{
         marginTop: 0,
-        height: 120,
-        width: 120,
+        height: 150,
+        width: 150,
     },
     measures:{
         flexDirection: 'column',

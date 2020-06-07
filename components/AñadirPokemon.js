@@ -43,11 +43,12 @@ const PokemonItem = ({ item,navigation, setName}) => {
     <View style={styles.box}>      
       <Text style={styles.pokedexName}>
   Nº {numberdef} {item.name.toUpperCase(1)}{" "}
-        <Image
+        {" "}
+      </Text>
+      <Image
           source={{ uri: url + numberdef + ".png" }}
           style={styles.sprite}
-        />{" "}
-      </Text>
+        />
       <Button title="Add Pokemon" onPress={goToPokemon}></Button>
     </View>
   );
@@ -62,7 +63,7 @@ export default function Pokedex({navigation, route}) {
       <DetailsProvider>
         <ImageBackground
           style={styles.container}
-          source={require("../assets/background-pdx.png")}
+          source={require("../assets/background_team.png")}
         >
           <ScrollView style={styles.scroll}>
             <GeneratePokemons setName={setName} navigation={navigation}/>
@@ -114,8 +115,8 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     paddingTop: 1,
     paddingBottom: 10,
-    paddingLeft: 90,
-    paddingRight: 90,
+    //paddingLeft: 90,
+    //paddingRight: 90,
     borderRadius: 25,
   },
   pokedexName: {

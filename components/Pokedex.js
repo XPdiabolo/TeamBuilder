@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     backgroundColor: "pink",
   },
   box: {
-    backgroundColor: '#4B4B4B',
+    backgroundColor: 'white',
     flex: 1,
     alignItems: "center",
     //justifyContent: "center",
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     //paddingRight: 20,
     fontSize: 16,
     fontWeight: "bold",
-    color: "white",
+    color: "black",
     //alignItems: "left",
   },
   scroll: {
