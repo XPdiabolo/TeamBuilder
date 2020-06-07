@@ -32,6 +32,7 @@ export default function App() {
             />
             <Stack.Screen name="AñadirPoke" component={Añadir} />
             <Stack.Screen name="PokeStats" component={StatsPoke} />
+            <Tab.Screen name="PokePage" component={UserProfile} />
           </Stack.Navigator>
         </NavigationContainer>
       </View>
@@ -41,7 +42,7 @@ export default function App() {
 
 const MainTabNavigator = () => (
   <Tab.Navigator initialRouteName="PokedexPage" screenOptions={{}}>
-    <Tab.Screen name="PokePage" component={UserProfile} />
+    
 
     <Tab.Screen name="PokedexPage" component={Pokedex} />
 
