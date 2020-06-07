@@ -7,9 +7,9 @@ import "react-native-gesture-handler";
 import Añadir from "./components/AñadirPokemon.js";
 import Poketeam from "./components/Equiporesumen.js";
 import Pokedex from "./components/Pokedex.js";
+import StatsPoke from "./components/StatsPokeTeam"
 import UserProfile from "./components/UserProfile.js";
 import { PokemonsProvider } from "./models/Pokemonsmodel.js";
-import PokemonDetails from "./components/UserProfile.js";
 
 const Tab = createBottomTabNavigator();
 
@@ -31,7 +31,7 @@ export default function App() {
               }}
             />
             <Stack.Screen name="AñadirPoke" component={Añadir} />
-            <Stack.Screen name="PokeStats" component={PokemonDetails} />
+            <Stack.Screen name="PokeStats" component={StatsPoke} />
           </Stack.Navigator>
         </NavigationContainer>
       </View>

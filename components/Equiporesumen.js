@@ -40,7 +40,7 @@ const Pokemons = ({ user, navigation }) => {
           title="Go to Pokedex"   onPress={() => navigation.navigate('AñadirPoke')}/>
       </View>
       <View style={styles.button}>
-        <Button title="Go to Pokemon" onPress={() => navigation.navigate('PokePage')}/>
+        <Button title="Go to Pokemon" onPress={() => navigation.navigate('PokeStats')}/>
       </View>
       
       
