@@ -4,10 +4,12 @@ import { ActivityIndicator, Button, FlatList, Image, ImageBackground, ScrollView
 import { DetailsProvider } from "../models/DetailsModel";
 import { PokemonsContext, PokemonsProvider } from "../models/Pokemonsmodel";
 
+
 const flag = null;
 
 const GeneratePokemons = observer(({navigation}) => {
   // (length) entre los dos =
+
   const pokemons = useContext(PokemonsContext);
 
   useEffect(() => {
@@ -40,6 +42,7 @@ const PokemonItem = ({ item, navigation }) => {
   };
 
   return (
+
     
     <View style={styles.box}>      
       <Text style={styles.pokedexName}>
