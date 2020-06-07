@@ -1,7 +1,7 @@
 import React from 'react';
+
 import { StyleSheet, Image, Text, View, ImageBackground, TouchableWithoutFeedback, Picker, TouchableOpacity, Button } from 'react-native';
 import Slider from '@react-native-community/slider';
-
 
 
 
@@ -24,6 +24,7 @@ const PokeTeam = ({user}) =>{
     );
 };*/
 
+
 const Pokemons =({user, navigation})=>{
     const goToPokedex = () => {
         navigation.navigate("PokedexPage");
@@ -41,7 +42,7 @@ const Pokemons =({user, navigation})=>{
             <Text style={styles.titles}>Team 01</Text>
             
     <View style={styles.button}>
-    <Button title="Go to Pokedex" onPress={goToPokedex}></Button>
+    <Button title="Go to Pokedex" onPress={()=>{alert('You pressed this')}}></Button>
     </View>
     <View style={styles.button}>
     <Button title="Go to Pokemon" onPress={goToStatsPoke}></Button>
