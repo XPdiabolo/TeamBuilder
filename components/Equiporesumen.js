@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Button, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 
@@ -16,87 +16,72 @@ const PokeTeam = ({ user, navigation}) => {
   );
 };
 
-/*const Name =({user})=>{
-    return(
-        <View style={styles.name}>
-            
-        </View>
-    );
-};*/
-
 const Pokemons = ({ user, navigation }) => {
-  const goToPokedex = () => {
-    navigation.navigate("AñadirPoke");
-  };
 
-  const goToStatsPoke = () => {
-    navigation.navigate("PokePage");
-  };
+  const equipo = "mewtwo";
 
-  const equipo = 'charizard';
+  const [name1, setName1] = useState('');
+  const [name2, setName2] = useState('');
+  const [name3, setName3] = useState('');
+  const [name4, setName4] = useState('');
+  const [name5, setName5] = useState('');
+  const [name6, setName6] = useState('');
 
- 
   return (
-    
     <View style={styles.description}>
       <Text style={styles.titles}>Team 01</Text>
-   
-    <View style= {styles.grup1}>
-      <View style={styles.button1}>
-        <Button
-          title="Add" onPress={() => navigation.navigate('AñadirPoke')}/>
-      </View>
-      <View style={styles.button2}>
-        <Button title="Det" onPress={() => navigation.navigate('PokeStats')}/>
-      </View>
-      <View style={styles.button1}>
-        <Button
-          title="Add" onPress={() => navigation.navigate('AñadirPoke')}/>
-      </View>
-      <View style={styles.button2}>
-        <Button title="Det" onPress={() => navigation.navigate('PokeStats')}/>
-      </View>
-      <View style={styles.button1}>
-        <Button
-          title="Add" onPress={() => navigation.navigate('AñadirPoke')}/>
-      </View>
-      <View style={styles.button2}>
-        <Button title="Det" onPress={() => navigation.navigate('PokeStats')}/>
-      </View>
-    </View>
 
-    <View style= {styles.grup1}>
-      <View style={styles.button1}>
+      <View style={styles.button}>
         <Button
-          title="Add" onPress={() => navigation.navigate('AñadirPoke')}/>
+          title="Go to Pokedex"   onPress={() => navigation.navigate('AñadirPoke', {slot: 1, setName:setName1})}/>
       </View>
-      <View style={styles.button2}>
-        <Button title="Det" onPress={() => navigation.navigate('PokeStats')}/>
+      <View style={styles.button}>
+        <Button title="Go to Pokemon" onPress={() => navigation.navigate('PokeStats', {pokename: equipo})}/>
       </View>
-      <View style={styles.button1}>
-        <Button
-          title="Add" onPress={() => navigation.navigate('AñadirPoke')}/>
-      </View>
-      <View style={styles.button2}>
-        <Button title="Det" onPress={() => navigation.navigate('PokeStats')}/>
-      </View>
-      <View style={styles.button1}>
-        <Button
-          title="Add" onPress={() => navigation.navigate('AñadirPoke')}/>
-      </View>
-      <View style={styles.button2}>
-        <Button title="Det" onPress={() => navigation.navigate('PokeStats')}/>
-      </View>
-    </View>
+      <View style={styles.content}>
+        <View style={styles.grup1}>
+          <TouchableOpacity title="Go to Pokedex"   onPress={() => navigation.navigate('AñadirPoke')}>
+            <View style={styles.button}>
+              <Pokemon />
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Añadir</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Añadir</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
 
-
+        <View style={styles.grup1}>
+          <TouchableOpacity>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Añadir</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Añadir</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Añadir</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 };
 
 const Pokemon =(item) =>{
   return(
-    <View><Text>Añadir</Text></View>
+    <View><Text>Name</Text></View>
   );
 };
 
@@ -273,16 +258,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "white",
   },
-  button1: {
-    paddingLeft:15,
+  button: {
+    marginLeft: 40,
+    marginRight: 40,
     paddingTop: 35,
     paddingBottom: 35,
-    flexDirection: 'row',
-  },
-  button2: {
-    paddingRight:15,
-    paddingTop: 35,
-    paddingBottom: 35,
-    flexDirection: 'row',
+    backgroundColor: 'red'
   },
 });
