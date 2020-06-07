@@ -46,7 +46,6 @@ const UserProfile = (user) =>{
     );
 };
 
-//user.user.height
 const Name =({user})=>{
     return(
         <View style={styles.name}>
@@ -55,17 +54,8 @@ const Name =({user})=>{
     );
 };
 
-/*const Profile =({user})=>{
-    return(
-        <View style={styles.profile}>
-            <Image source={{ uri : user.user.avatar }}  style={styles.sprite}/>
-            <Measures user={user} />
-        </View>
-    );
-};*/
+
 const Profile =({user})=>{
-    //https://play.pokemonshowdown.com/sprites/xyani/bulbasaur.gif
-    //https://img.pokemondb.net/sprites/x-y/normal/
     return(
         <View style={styles.profile}>
             <Image source={{uri : "https://play.pokemonshowdown.com/sprites/xyani/"+ user.user.species.name +".gif"}}  style={styles.sprite}/>
@@ -171,19 +161,6 @@ const styles = StyleSheet.create({
         
         backgroundColor: "orange"
     },
-    header:{
-        height: 100,
-        //flex: 0.8,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: '#4B4B4B',
-    },
-    headertitle:{
-        color: "white",
-        fontWeight: "bold",
-        fontSize: 33,
-        paddingTop: 25
-    },
     name:{
         flexDirection: 'row',
         height: 35,
@@ -202,17 +179,8 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         paddingLeft: 15
     },
-    number:{
-        //backgroundColor: '#2A2A2A',
-        color: "white",
-        fontSize: 16,
-        fontWeight: "bold",
-        paddingLeft: 15,
-        paddingRight: 15
-    },
     profile:{
 
-        //borderRadius: 10,
         marginRight: 15,
         marginLeft: 15,
         height: 150,
@@ -222,29 +190,17 @@ const styles = StyleSheet.create({
         paddingRight: 10
     },
     description:{
-        // flex: 1,
         borderRadius: 10,
         margin: 15,
-        //paddingRight: 15,
-        //paddingLeft: 15,
         backgroundColor: 'white'
     },
     Shiny:{
-        //borderTopRightRadius:10,
         borderRadius: 10,
         flex: 0.8,
         flexDirection: "column",
         marginRight: 15,
         marginLeft: 15,
-        //marginBottom: 15,
-        //paddingLeft: 15,
-        //paddingRight: 15,
         backgroundColor: 'white'
-    },
-    footer:{
-        flex: 1,
-        height: 80,
-        backgroundColor: 'pink'
     },
     titles:{
         borderTopRightRadius:10,
@@ -265,9 +221,6 @@ const styles = StyleSheet.create({
         paddingBottom: 20
     },
     sprite:{
-        //margin: 20,
-        //height: 120,
-        //width: 120,
         flex: 1,
         resizeMode: "contain"
     },
@@ -282,16 +235,12 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         backgroundColor: '#E0E0E0',
         justifyContent: "space-around",
-        //paddingBottom: 5,
-        //paddingTop: 5,
-        //paddingLeft: 12,
         borderRadius: 10,
     },
     measdet:{
         flex: 1,
         flexDirection: 'row',
         justifyContent: "center",
-        //alignItems: "center"
     },
     measwidth:{
         alignItems: "center",
@@ -301,7 +250,6 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         flex: 0.75,
         justifyContent: "center",
-        //alignItems: "center",
         
         backgroundColor: '#E0E0E0',
     },
@@ -319,15 +267,12 @@ const styles = StyleSheet.create({
     },
 
     Moves:{
-        //borderTopRightRadius:10,
         borderRadius: 10,
         flex: 0.3,
         flexDirection: "column",
         marginRight: 15,
         marginLeft: 15,
         marginBottom: 15,
-        //paddingLeft: 15,
-        //paddingRight: 15,
         paddingBottom: 1,
         backgroundColor: 'white'
     },
@@ -337,8 +282,6 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-around",
         paddingTop: 5
-        //paddingLeft: 15,
-        //paddingRight: 15
     },
 
     SpritesShinyText:{
