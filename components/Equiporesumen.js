@@ -10,9 +10,10 @@ const PokeTeam = ({ user, navigation}) => {
       source={require("../assets/background_team.png")}
     >
       <Pokemons user={user} navigation={navigation} />
-      <Weakness user={user} />
       <Stats user={user} />
+      
     </ImageBackground>
+    //<Weakness user={user} />
   );
 };
 
@@ -96,21 +97,23 @@ const Measures = ({ user }) => {
 
 const Stats = ({ user }) => {
   return (
+    <View style={styles.stats}>
+      <Text style={styles.titles}>Stats</Text>
+      <Text style={styles.contentStats}>Here you can see your team stats when you creat it.</Text>
+    </View>
+  );
+};
+
+/*
+const Weakness = ({ user }) => {
+  return (
     <View style={styles.description}>
       <Text style={styles.titles}>Weaknesses</Text>
       <Text style={styles.content}>Hola</Text>
     </View>
   );
 };
-
-const Weakness = ({ user }) => {
-  return (
-    <View style={styles.stats}>
-      <Text style={styles.titles}>Stats</Text>
-      <Text style={styles.content}>Hola</Text>
-    </View>
-  );
-};
+*/
 
 export default PokeTeam;
 
@@ -266,5 +269,11 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     paddingBottom: 30,
    
+  },
+  contentStats: {},
+  sprite: {
+    height: 90,
+    width: 75,
+    flex: 1,    
   },
 });
