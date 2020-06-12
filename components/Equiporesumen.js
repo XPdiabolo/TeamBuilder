@@ -215,16 +215,6 @@ const Stats = ({ user }) => {
   );
 };
 
-/*
-const Weakness = ({ user }) => {
-  return (
-    <View style={styles.description}>
-      <Text style={styles.titles}>Weaknesses</Text>
-      <Text style={styles.content}>Hola</Text>
-    </View>
-  );
-};
-*/
 
 export default PokeTeam;
 

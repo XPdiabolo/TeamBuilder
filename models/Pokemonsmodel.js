@@ -5,7 +5,7 @@ class PokemonsModel{
     @observable pokemon = null;
 
     @action async loadPokemon(){
-       const response = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=807"); //807
+       const response = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=400"); //807
        const json = await response.json();
        this.pokemon = json.results;
     }
