@@ -250,10 +250,10 @@ const styles = StyleSheet.create({
         paddingBottom: 20
     },
     content2:{
-        paddingLeft: 15,
-        paddingRight: 15,
-        paddingTop: 5,
-        paddingBottom: 10
+        flex: 1,
+        marginTop: 15,
+        fontSize: 18,
+        marginLeft: 15
     },
     sprite:{
         flex: 1,

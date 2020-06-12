@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react';
 import React, { useState } from "react";
 import {
   Button,
@@ -8,7 +9,8 @@ import {
   View,
   Image,
 } from "react-native";
-import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { DetailsContext, DetailsProvider } from '../models/DetailsModel';
 
 const PokeTeam = ({ user, navigation }) => {
   return (
@@ -17,11 +19,32 @@ const PokeTeam = ({ user, navigation }) => {
       source={require("../assets/background_team.png")}
     >
       <Pokemons user={user} navigation={navigation} />
-      <Stats user={user} />
+      <Stats />
     </ImageBackground>
     //<Weakness user={user} />
   );
 };
+
+const RenderDetails = observer(({navigation, route}) =>{
+
+  const details = useContext(DetailsContext);
+
+  useEffect(() => {
+    details.loadDetails(pokename);
+  }, []);  
+
+  if (details.detail == null) {
+    return (
+      <View>
+        <ActivityIndicator size="large" />
+      </View>
+    )
+  }else{
+      return(
+          <PokemonStats user={details.detail}/>
+      )
+  };
+});
 
 const Pokemons = ({ user, navigation }) => {
   const url =
@@ -202,12 +225,19 @@ const Measures = ({ user }) => {
 
 const Stats = ({ user }) => {
   return (
+    <DetailsProvider>
     <View style={styles.stats}>
       <Text style={styles.titles}>Stats</Text>
-      <Text style={styles.contentStats}>
-        Here you can see your team stats when you creat it.
-      </Text>
+      <View style={styles.stats}>
+            <Text style={styles.content1}>Speed:</Text>
+            <Text style={styles.content1}>Sp. Defense:</Text>
+            <Text style={styles.content1}>SP. Attack:</Text>
+            <Text style={styles.content1}>Defense:</Text>
+            <Text style={styles.content1}>Attack:</Text>
+            <Text style={styles.content1}>Hp:</Text>
+        </View>
     </View>
+    </DetailsProvider>
   );
 };
 
@@ -382,10 +412,14 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     paddingBottom: 15,
   },
-  contentStats: {},
   sprite: {
     //height: 90,
     //width: 75,
     flex: 1,
   },
+  content1:{
+    flex: 1,
+    marginTop: 15,
+    fontSize: 18
+  }
 });
