@@ -20,7 +20,7 @@ export default function App() {
     <PokemonsProvider>
       <View style={styles.container}>
         <NavigationContainer style={styles.navContainer}>
-          <Stack.Navigator>
+          <Stack.Navigator >
             <Stack.Screen
               name="Team Builder"
               component={MainTabNavigator}

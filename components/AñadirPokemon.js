@@ -9,7 +9,6 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TextInput,
   View,
 } from "react-native";
 import { DetailsProvider } from "../models/DetailsModel";
@@ -28,7 +27,6 @@ const GeneratePokemons = observer(({ navigation, setName }) => {
     </View>
   ) : (
     <View>
-      <TextInput style={styles.textinput} />
       <FlatList
         data={pokemons.pokemon}
         renderItem={(props) => (
@@ -41,12 +39,12 @@ const GeneratePokemons = observer(({ navigation, setName }) => {
 
 const PokemonItem = ({ item, navigation, setName }) => {
   const url =
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"; //https://img.pokemondb.net/sprites/x-y/normal/
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"; 
   const number = item.url.substr(34, 37);
   const numberdef = number.slice(0, -1);
   const goToPokemon = () => {
     setName(numberdef);
-    navigation.goBack(); //Aqui s'indica a la pagina que va
+    navigation.goBack(); 
   };
 
   return (
@@ -59,8 +57,7 @@ const PokemonItem = ({ item, navigation, setName }) => {
     </View>
   );
 };
-//Pokemon database https://pokemondb.net/sprites/bulbasaur
-//https://pokemondb.net/pokedex/all
+
 
 export default function Pokedex({ navigation, route }) {
   const { setName } = route.params;
@@ -80,81 +77,48 @@ export default function Pokedex({ navigation, route }) {
   );
 }
 
-//<FlatList esto iba entre imagebackgrounds
-//          data={generateNumbers()}
-//          renderItem={renderItem}
-//        />
 
 const styles = StyleSheet.create({
-  header: {
-    height: 100,
-    //flex: 0.8,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#4B4B4B",
-  },
-  headertitle: {
-    color: "white",
-    fontWeight: "bold",
-    fontSize: 33,
-    paddingTop: 25,
-  },
+
   container: {
     flex: 1,
-    //flex: 1,
-    //backgroundColor: "#ef503b",
     alignItems: "center",
-    //justifyContent: "center",
-    //marginTop: 30,
   },
-  footer: {
-    flex: 1,
-    height: 80,
-    backgroundColor: "pink",
-  },
+
   box: {
     backgroundColor: "white",
     flex: 1,
     alignItems: "center",
-    //justifyContent: "center",
     margin: 12,
     marginLeft: 20,
     paddingTop: 1,
     paddingBottom: 10,
-    //paddingLeft: 90,
-    //paddingRight: 90,
     borderRadius: 25,
   },
+
   pokedexName: {
     flex: 1,
     alignItems: "center",
     paddingBottom: 9,
     paddingTop: 9,
     paddingLeft: 1,
-    //paddingRight: 20,
     fontSize: 16,
     fontWeight: "bold",
     color: "#424242",
-    //alignItems: "left",
   },
+
   scroll: {
     flex: 1,
   },
+
   sprite: {
-    /*alignContent: "right",
-    alignSelf: 'flex-start',
-    width: 70,
-    height: 70,
-    padding: 10,
-    paddingRight: 100,
-    paddingBottom: 100,
-    resizeMode: "contain"*/
     flex: 1,
     width: 50,
     height: 50,
     position: "relative",
     margin: 10,
   },
+
   textinput: {
     height: 30,
     borderRadius: 15,
@@ -165,7 +129,5 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     backgroundColor: "white",
   },
-  hidden: {
-    display: "none",
-  },
+
 });

@@ -1,6 +1,6 @@
 import { observer } from "mobx-react";
 import React, { useContext, useEffect } from "react";
-import { ActivityIndicator, Button, FlatList, Image, ImageBackground, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { ActivityIndicator, Button, FlatList, Image, ImageBackground, ScrollView, StyleSheet, Text, View } from "react-native";
 import { DetailsProvider } from "../models/DetailsModel";
 import { PokemonsContext, PokemonsProvider } from "../models/Pokemonsmodel";
 import { Feather } from "@expo/vector-icons";
@@ -8,7 +8,6 @@ import { Feather } from "@expo/vector-icons";
 const flag = null;
 
 const GeneratePokemons = observer(({navigation}) => {
-  // (length) entre los dos =
   const pokemons = useContext(PokemonsContext);
 
   useEffect(() => {
@@ -25,7 +24,6 @@ const GeneratePokemons = observer(({navigation}) => {
   return (
     <View>
 
-      <TextInput style={styles.textinput} />
       <FlatList data={pokemons.pokemon} renderItem={(props)=><PokemonItem {...props} navigation={navigation}/>} />
     </View>
   );
@@ -33,11 +31,11 @@ const GeneratePokemons = observer(({navigation}) => {
 
 const PokemonItem = ({ item, navigation }) => {
   const url =
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"; //https://img.pokemondb.net/sprites/x-y/normal/
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"; 
   const number = item.url.substr(34, 37);
   const numberdef = number.slice(0, -1);
   const goToPokemon = () => {
-    navigation.navigate("PokePage", {pokeName: item.name}); //Aqui s'indica a la pagina que va
+    navigation.navigate("PokePage", {pokeName: item.name}); 
   };
 
   return (
@@ -54,8 +52,6 @@ const PokemonItem = ({ item, navigation }) => {
     </View>
   );
 };
-//Pokemon database https://pokemondb.net/sprites/bulbasaur
-//https://pokemondb.net/pokedex/all
 
 export default function Pokedex({navigation}) {
   return (
@@ -79,77 +75,43 @@ Pokedex.Icon = ({color, size}) => (
 );
 
 const styles = StyleSheet.create({
-  header: {
-    height: 100,
-    //flex: 0.8,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#4B4B4B",
-  },
-  headertitle: {
-    color: "white",
-    fontWeight: "bold",
-    fontSize: 33,
-    paddingTop: 25,
-  },
+
   container: {
     flex: 1,
-    //flex: 1,
-    //backgroundColor: "#ef503b",
     alignItems: "center",
-    //justifyContent: "center",
-    //marginTop: 30,
   },
-  footer: {
-    flex: 1,
-    height: 80,
-    backgroundColor: "pink",
-  },
+
   box: {
     backgroundColor: 'white',
     flex: 1,
     alignItems: "center",
-    //justifyContent: "center",
     margin: 12,
     marginLeft: 20,
     paddingTop: 1,
     paddingBottom: 10,
-    //paddingLeft: 90,
-    //paddingRight: 90,
     borderRadius: 25,
   },
+
   pokedexName: {
     flex: 1,
     alignItems: "center",
     paddingBottom: 9,
     paddingTop: 9,
     paddingLeft: 1,
-    //paddingRight: 20,
     fontSize: 16,
     fontWeight: "bold",
     color: "black",
-    //alignItems: "left",
   },
+
   scroll: {
     flex: 1,
   },
+
   sprite: {
     flex: 1,
     width: 50,
     height: 50,
     position: "relative",
   },
-  textinput: {
-    height: 30,
-    borderRadius: 15,
-    paddingLeft: 15,
-    marginLeft: 20,
-    marginRight: 20,
-    marginTop: 15,
-    marginBottom: 10,
-    backgroundColor: "white",
-  },
-  hidden: {
-    display: "none",
-  },
+
 });
