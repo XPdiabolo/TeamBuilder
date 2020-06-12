@@ -1,16 +1,14 @@
 import { observer } from 'mobx-react';
 import React, { useContext, useEffect } from 'react';
-//import Slider from '@react-native-community/slider';
 import { ActivityIndicator, Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { Dropdown } from 'react-native-material-dropdown';
 import { DetailsContext, DetailsProvider } from '../models/DetailsModel';
 import { ObjsContext, ObjsProvider } from '../models/ObjectsModel';
 
 
-const RenderDetails = observer(({navigation, route}) =>{
+const RenderDetails = observer(({ route }) =>{
 
     const details = useContext(DetailsContext);
-    const pokemonexemple = 'articuno';
     const {pokename} = route.params;
   
     useEffect(() => {
@@ -48,8 +46,6 @@ const PokemonStats = (user) =>{
 
 
 const Profile =({user})=>{
-    //https://play.pokemonshowdown.com/sprites/xyani/bulbasaur.gif
-    //https://img.pokemondb.net/sprites/x-y/normal/
     return(
         <View style={styles.profile}>
             <Image source={{uri : "https://play.pokemonshowdown.com/sprites/xyani/"+ user.user.species.name +".gif"}}  style={styles.sprite}/>
@@ -102,9 +98,6 @@ const Item = observer(() =>{
         objects.loadObjs();
       }, []);  
 
-    //const allobjs = objects.objs.results.map(element=>element.name);
-
-//<Dropdown label='select' data={allobjs} textColor="black" style={styles.dropdown}/>
     const datos = [{
         value: 'Focus Sash',
       }, {
@@ -131,7 +124,6 @@ const Item = observer(() =>{
     );
 });
 
-//<Text>{JSON.stringify(objects.objs)}</Text>
 
 const Ability = ({user}) =>{
     return(
@@ -183,27 +175,14 @@ const styles = StyleSheet.create({
     page:{
         flex: 1,
     },
-    header:{
-        height: 100,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: '#4B4B4B',
-    },
-    headertitle:{
-        color: "white",
-        fontWeight: "bold",
-        fontSize: 33,
-        paddingTop: 25
-    },
+
     items:{
         flexDirection: 'row',
-        //marginBottom: 5,
         marginRight: 13.5,
         marginLeft: 13.5,
         marginBottom: 18.5,
         marginTop: 13.5,
         justifyContent: "space-evenly"
-        //justifyContent: "space-around"
     },
    
     profile:{
@@ -226,11 +205,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         alignItems: 'stretch'
     },
-    footer:{
-        flex: 1,
-        height: 80,
-        backgroundColor: 'pink'
-    },
+
     titles:{
         borderTopRightRadius:10,
         borderTopLeftRadius: 10,
@@ -266,15 +241,11 @@ const styles = StyleSheet.create({
         alignItems: "center",
         margin: 15,    
         borderRadius: 10,
-        //flex: 1,
     },
     item:{
         flexDirection: 'column',
         backgroundColor: 'white',
-        //alignItems: "center",
-        //margin: 13.5,    
         borderRadius: 10,
-        //flex: 1,
         
     },
     dropdown:{
