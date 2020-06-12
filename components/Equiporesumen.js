@@ -232,6 +232,8 @@ const styles = StyleSheet.create({
   grup1: {
     flexDirection: "row",
     justifyContent: "center",
+    marginRight: 15,
+    marginLeft: 15
   },
   pokamios: {
     margin: 10,
@@ -366,20 +368,24 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   button1: {
-    paddingLeft: 15,
-    paddingTop: 30,
-    paddingBottom: 30,
-    marginRight: 2,
+    flex: 1,
+    //paddingLeft: 15,
+    paddingTop: 15,
+    paddingBottom: 15,
+    //marginRight: 2,
   },
   button2: {
-    paddingRight: 15,
-    paddingTop: 30,
-    paddingBottom: 30,
+    flex: 1,
+    //paddingRight: 15,
+    marginLeft:2,
+    marginRight: 2,
+    paddingTop: 15,
+    paddingBottom: 15,
   },
   contentStats: {},
   sprite: {
-    height: 90,
-    width: 75,
+    //height: 90,
+    //width: 75,
     flex: 1,
   },
 });
