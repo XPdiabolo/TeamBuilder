@@ -1,54 +1,60 @@
 import { observer } from "mobx-react";
 import React, { useContext, useEffect } from "react";
-import { ActivityIndicator, Button, FlatList, Image, ImageBackground, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import {
+  ActivityIndicator,
+  Button,
+  FlatList,
+  Image,
+  ImageBackground,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
 import { DetailsProvider } from "../models/DetailsModel";
 import { PokemonsContext, PokemonsProvider } from "../models/Pokemonsmodel";
 
-const GeneratePokemons = observer(({navigation, setName}) => {
-  // (length) entre los dos =
+const GeneratePokemons = observer(({ navigation, setName }) => {
   const pokemons = useContext(PokemonsContext);
 
   useEffect(() => {
     pokemons.loadPokemon();
   }, []);
 
-  if (pokemons.pokemon == null) {
-    return (
-      <View>
-        <ActivityIndicator size="large" lightTheme round editable={true} />
-      </View>
-    );
-  }
-  return (
+  return pokemons.pokemon == null ? (
     <View>
-
+      <ActivityIndicator size="large" lightTheme round editable />
+    </View>
+  ) : (
+    <View>
       <TextInput style={styles.textinput} />
-      <FlatList data={pokemons.pokemon} renderItem={(props)=><PokemonItem {...props} setName={setName} navigation={navigation}/>} />
+      <FlatList
+        data={pokemons.pokemon}
+        renderItem={(props) => (
+          <PokemonItem {...props} setName={setName} navigation={navigation} />
+        )}
+      />
     </View>
   );
 });
 
-const PokemonItem = ({ item,navigation, setName}) => {
+const PokemonItem = ({ item, navigation, setName }) => {
   const url =
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"; //https://img.pokemondb.net/sprites/x-y/normal/
   const number = item.url.substr(34, 37);
   const numberdef = number.slice(0, -1);
   const goToPokemon = () => {
-    navigation.goBack({setName1:item.name}); //Aqui s'indica a la pagina que va
+    setName(numberdef);
+    navigation.goBack(); //Aqui s'indica a la pagina que va
   };
 
   return (
-
-    
-    <View style={styles.box}>      
+    <View style={styles.box}>
       <Text style={styles.pokedexName}>
-  Nº {numberdef} {item.name.toUpperCase(1)}{" "}
-        {" "}
+        N.º {numberdef} {item.name.toUpperCase(1)}
       </Text>
-      <Image
-          source={{ uri: url + numberdef + ".png" }}
-          style={styles.sprite}
-        />
+      <Image source={{ uri: url + numberdef + ".png" }} style={styles.sprite} />
       <Button title="Add Pokemon" onPress={goToPokemon}></Button>
     </View>
   );
@@ -56,8 +62,8 @@ const PokemonItem = ({ item,navigation, setName}) => {
 //Pokemon database https://pokemondb.net/sprites/bulbasaur
 //https://pokemondb.net/pokedex/all
 
-export default function Pokedex({navigation, route}) {
-  const {setName} = route.params;
+export default function Pokedex({ navigation, route }) {
+  const { setName } = route.params;
   return (
     <PokemonsProvider>
       <DetailsProvider>
@@ -66,7 +72,7 @@ export default function Pokedex({navigation, route}) {
           source={require("../assets/background_team.png")}
         >
           <ScrollView style={styles.scroll}>
-            <GeneratePokemons setName={setName} navigation={navigation}/>
+            <GeneratePokemons setName={setName} navigation={navigation} />
           </ScrollView>
         </ImageBackground>
       </DetailsProvider>
@@ -74,7 +80,7 @@ export default function Pokedex({navigation, route}) {
   );
 }
 
-//<FlatList esto iba entre imagebaxkgrounds
+//<FlatList esto iba entre imagebackgrounds
 //          data={generateNumbers()}
 //          renderItem={renderItem}
 //        />

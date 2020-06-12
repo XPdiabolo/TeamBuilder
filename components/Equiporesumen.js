@@ -1,9 +1,15 @@
-import React, {useState} from "react";
-import { Button, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import React, { useState } from "react";
+import {
+  Button,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Image,
+} from "react-native";
 
-
-const PokeTeam = ({ user, navigation}) => {
-
+const PokeTeam = ({ user, navigation }) => {
   return (
     <ImageBackground
       style={styles.page}
@@ -11,68 +17,171 @@ const PokeTeam = ({ user, navigation}) => {
     >
       <Pokemons user={user} navigation={navigation} />
       <Stats user={user} />
-      
     </ImageBackground>
     //<Weakness user={user} />
   );
 };
 
 const Pokemons = ({ user, navigation }) => {
+  const url =
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"; //https://img.pokemondb.net/sprites/x-y/normal/
 
   const equipo = "mewtwo";
 
-  const [name1, setName1] = useState('');
-  const [name2, setName2] = useState('');
-  const [name3, setName3] = useState('');
-  const [name4, setName4] = useState('');
-  const [name5, setName5] = useState('');
-  const [name6, setName6] = useState('');
-
+  const [name1, setName1] = useState("");
+  const [name2, setName2] = useState("");
+  const [name3, setName3] = useState("");
+  const [name4, setName4] = useState("");
+  const [name5, setName5] = useState("");
+  const [name6, setName6] = useState("");
+  console.log(name1);
   return (
     <View style={styles.description}>
       <Text style={styles.titles}>Team 01</Text>
 
-        <View style={styles.grup1}>
-          <View style={styles.button1}>
-            <Button title="Add"   onPress={() => navigation.navigate('AñadirPoke', {slot: 1, setName:setName1})}/>
-          </View>
-          <View style={styles.button2}>
-            <Button title="Det" onPress={() => navigation.navigate('PokeStats', {pokename: equipo})}/>
-          </View>
-          <View style={styles.button1}>
-            <Button title="Add"   onPress={() => navigation.navigate('AñadirPoke', {slot: 2, setName:setName1})}/>
-          </View>
-          <View style={styles.button2}>
-            <Button title="Det" onPress={() => navigation.navigate('PokeStats', {pokename: equipo})}/>
-          </View>
-          <View style={styles.button1}>
-            <Button title="Add"   onPress={() => navigation.navigate('AñadirPoke', {slot: 3, setName:setName1})}/>
-          </View>
-          <View style={styles.button2}>
-            <Button title="Det" onPress={() => navigation.navigate('PokeStats', {pokename: equipo})}/>
-          </View>
+      <View style={styles.grup1}>
+        <View style={styles.button1}>
+          {name1 ? (
+            <Image
+              source={{ uri: url + name1 + ".png" }}
+              style={styles.sprite}
+            />
+          ) : (
+            <Button
+              title="Add"
+              onPress={() =>
+                navigation.navigate("AñadirPoke", { setName: setName1 })
+              }
+            />
+          )}
         </View>
+        <View style={styles.button2}>
+          <Button
+            title="Det"
+            onPress={() =>
+              navigation.navigate("PokeStats", { pokename: name1 })
+            }
+          />
+        </View>
+        <View style={styles.button1}>
+        {name2 ? (
+            <Image
+              source={{ uri: url + name2 + ".png" }}
+              style={styles.sprite}
+            />
+          ) : (
+            <Button
+              title="Add"
+              onPress={() =>
+                navigation.navigate("AñadirPoke", { setName: setName2 })
+              }
+            />
+          )}
+        </View>
+        <View style={styles.button2}>
+          <Button
+            title="Det"
+            onPress={() =>
+              navigation.navigate("PokeStats", { pokename: name2 })
+            }
+          />
+        </View>
+        <View style={styles.button1}>
+        {name3 ? (
+            <Image
+              source={{ uri: url + name3 + ".png" }}
+              style={styles.sprite}
+            />
+          ) : (
+            <Button
+              title="Add"
+              onPress={() =>
+                navigation.navigate("AñadirPoke", { setName: setName3 })
+              }
+            />
+          )}
+        </View>
+        <View style={styles.button2}>
+          <Button
+            title="Det"
+            onPress={() =>
+              navigation.navigate("PokeStats", { pokename: name3 })
+            }
+          />
+        </View>
+      </View>
 
-        <View style={styles.grup1}>
-          <View style={styles.button1}>
-            <Button title="Add"   onPress={() => navigation.navigate('AñadirPoke', {slot: 4, setName:setName1})}/>
-          </View>
-          <View style={styles.button2}>
-            <Button title="Det" onPress={() => navigation.navigate('PokeStats', {pokename: equipo})}/>
-          </View>
-          <View style={styles.button1}>
-            <Button title="Add"   onPress={() => navigation.navigate('AñadirPoke', {slot: 5, setName:setName1})}/>
-          </View>
-          <View style={styles.button2}>
-            <Button title="Det" onPress={() => navigation.navigate('PokeStats', {pokename: equipo})}/>
-          </View>
-          <View style={styles.button1}>
-            <Button title="Add"   onPress={() => navigation.navigate('AñadirPoke', {slot: 6, setName:setName1})}/>
-          </View>
-          <View style={styles.button2}>
-            <Button title="Det" onPress={() => navigation.navigate('PokeStats', {pokename: equipo})}/>
-          </View>
+      <View style={styles.grup1}>
+        <View style={styles.button1}>
+        {name4 ? (
+            <Image
+              source={{ uri: url + name4 + ".png" }}
+              style={styles.sprite}
+            />
+          ) : (
+            <Button
+              title="Add"
+              onPress={() =>
+                navigation.navigate("AñadirPoke", { setName: setName4 })
+              }
+            />
+          )}
         </View>
+        <View style={styles.button2}>
+          <Button
+            title="Det"
+            onPress={() =>
+              navigation.navigate("PokeStats", { pokename: name4 })
+            }
+          />
+        </View>
+        <View style={styles.button1}>
+        {name5 ? (
+            <Image
+              source={{ uri: url + name5 + ".png" }}
+              style={styles.sprite}
+            />
+          ) : (
+            <Button
+              title="Add"
+              onPress={() =>
+                navigation.navigate("AñadirPoke", { setName: setName5 })
+              }
+            />
+          )}
+        </View>
+        <View style={styles.button2}>
+          <Button
+            title="Det"
+            onPress={() =>
+              navigation.navigate("PokeStats", { pokename: name5 })
+            }
+          />
+        </View>
+        <View style={styles.button1}>
+        {name6 ? (
+            <Image
+              source={{ uri: url + name6 + ".png" }}
+              style={styles.sprite}
+            />
+          ) : (
+            <Button
+              title="Add"
+              onPress={() =>
+                navigation.navigate("AñadirPoke", { setName: setName6 })
+              }
+            />
+          )}
+        </View>
+        <View style={styles.button2}>
+          <Button
+            title="Det"
+            onPress={() =>
+              navigation.navigate("PokeStats", { pokename: name6 })
+            }
+          />
+        </View>
+      </View>
     </View>
   );
 };
@@ -99,7 +208,9 @@ const Stats = ({ user }) => {
   return (
     <View style={styles.stats}>
       <Text style={styles.titles}>Stats</Text>
-      <Text style={styles.contentStats}>Here you can see your team stats when you creat it.</Text>
+      <Text style={styles.contentStats}>
+        Here you can see your team stats when you creat it.
+      </Text>
     </View>
   );
 };
@@ -118,6 +229,12 @@ const Weakness = ({ user }) => {
 export default PokeTeam;
 
 const styles = StyleSheet.create({
+  sprite: {
+    flex: 1,
+    width: 50,
+    height: 50,
+    position: "relative",
+  },
   page: {
     flex: 1,
     backgroundColor: "orange",
@@ -262,19 +379,17 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingTop: 30,
     paddingBottom: 30,
-    marginRight: 2
-   
+    marginRight: 2,
   },
   button2: {
     paddingRight: 15,
     paddingTop: 30,
     paddingBottom: 30,
-   
   },
   contentStats: {},
   sprite: {
     height: 90,
     width: 75,
-    flex: 1,    
+    flex: 1,
   },
 });

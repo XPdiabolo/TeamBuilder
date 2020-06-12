@@ -43,8 +43,7 @@ const PokemonItem = ({ item, navigation }) => {
     
     <View style={styles.box}>      
       <Text style={styles.pokedexName}>
-        Nº {numberdef} {item.name.toUpperCase(1)}{" "}
-        {" "}
+        Nº {numberdef} {item.name.toUpperCase(1)}
       </Text>
       <Image
           source={{ uri: url + numberdef + ".png" }}
@@ -135,19 +134,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   sprite: {
-    /*alignContent: "right",
-    alignSelf: 'flex-start',
-    width: 70,
-    height: 70,
-    padding: 10,
-    paddingRight: 100,
-    paddingBottom: 100,
-    resizeMode: "contain"*/
     flex: 1,
     width: 50,
     height: 50,
     position: "relative",
-    //margin: 10,
   },
   textinput: {
     height: 30,
