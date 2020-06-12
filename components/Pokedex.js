@@ -3,6 +3,7 @@ import React, { useContext, useEffect } from "react";
 import { ActivityIndicator, Button, FlatList, Image, ImageBackground, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import { DetailsProvider } from "../models/DetailsModel";
 import { PokemonsContext, PokemonsProvider } from "../models/Pokemonsmodel";
+import { Feather } from "@expo/vector-icons";
 
 const flag = null;
 
@@ -73,10 +74,9 @@ export default function Pokedex({navigation}) {
   );
 }
 
-//<FlatList esto iba entre imagebaxkgrounds
-//          data={generateNumbers()}
-//          renderItem={renderItem}
-//        />
+Pokedex.Icon = ({color, size}) => (
+  <Feather name="info" size={size} color={color} />
+);
 
 const styles = StyleSheet.create({
   header: {

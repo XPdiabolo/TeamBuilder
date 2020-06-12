@@ -8,6 +8,7 @@ import {
   View,
   Image,
 } from "react-native";
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 
 const PokeTeam = ({ user, navigation }) => {
   return (
@@ -57,7 +58,7 @@ const Pokemons = ({ user, navigation }) => {
         </View>
         <View style={styles.button2}>
           <Button
-            title="Det"
+            title="Inf"
             onPress={() =>
               navigation.navigate("PokeStats", { pokename: name1 })
             }
@@ -80,7 +81,7 @@ const Pokemons = ({ user, navigation }) => {
         </View>
         <View style={styles.button2}>
           <Button
-            title="Det"
+            title="Inf"
             onPress={() =>
               navigation.navigate("PokeStats", { pokename: name2 })
             }
@@ -103,7 +104,7 @@ const Pokemons = ({ user, navigation }) => {
         </View>
         <View style={styles.button2}>
           <Button
-            title="Det"
+            title="Inf"
             onPress={() =>
               navigation.navigate("PokeStats", { pokename: name3 })
             }
@@ -128,8 +129,8 @@ const Pokemons = ({ user, navigation }) => {
           )}
         </View>
         <View style={styles.button2}>
-          <Button
-            title="Det"
+          <Button  
+            title="Inf"
             onPress={() =>
               navigation.navigate("PokeStats", { pokename: name4 })
             }
@@ -152,7 +153,7 @@ const Pokemons = ({ user, navigation }) => {
         </View>
         <View style={styles.button2}>
           <Button
-            title="Det"
+            title="Inf"
             onPress={() =>
               navigation.navigate("PokeStats", { pokename: name5 })
             }
@@ -175,7 +176,7 @@ const Pokemons = ({ user, navigation }) => {
         </View>
         <View style={styles.button2}>
           <Button
-            title="Det"
+            title="Inf"
             onPress={() =>
               navigation.navigate("PokeStats", { pokename: name6 })
             }
@@ -186,11 +187,6 @@ const Pokemons = ({ user, navigation }) => {
   );
 };
 
-/*const Pokemon =(item) =>{
-  return(
-    <View><Text>Name</Text></View>
-  );
-};*/
 
 const Measures = ({ user }) => {
   return (
@@ -214,6 +210,10 @@ const Stats = ({ user }) => {
     </View>
   );
 };
+
+PokeTeam.Icon = ({color, size}) => (
+  <MaterialCommunityIcons name="pokeball" size={size} color={color} />
+);
 
 
 export default PokeTeam;
