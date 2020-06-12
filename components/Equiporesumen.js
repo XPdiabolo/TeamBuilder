@@ -213,14 +213,9 @@ const Stats = ({ }) => {
   return (
     <DetailsProvider>
     <View style={styles.stats}>
-      <Text style={styles.titles}>Stats</Text>
+      <Text style={styles.titles}>Type weakness</Text>
       <View style={styles.stats}>
-            <Text style={styles.content1}>Speed:</Text>
-            <Text style={styles.content1}>Sp. Defense:</Text>
-            <Text style={styles.content1}>SP. Attack:</Text>
-            <Text style={styles.content1}>Defense:</Text>
-            <Text style={styles.content1}>Attack:</Text>
-            <Text style={styles.content1}>Hp:</Text>
+            < Image source={require("../assets/TypesTable_2.png")} style={styles.types}/>
         </View>
     </View>
     </DetailsProvider>
@@ -309,5 +304,9 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 15,
     fontSize: 18
+  },
+
+  types: {
+    flex: 1,
   }
 });
