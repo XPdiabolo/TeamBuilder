@@ -25,12 +25,12 @@ const PokeTeam = ({ user, navigation }) => {
   );
 };
 
-const RenderDetails = observer(({navigation, route}) =>{
+const RenderDetails = observer((pokemon) =>{
 
   const details = useContext(DetailsContext);
 
   useEffect(() => {
-    details.loadDetails(pokename);
+    details.loadDetails(pokemon);
   }, []);  
 
   if (details.detail == null) {
@@ -41,7 +41,7 @@ const RenderDetails = observer(({navigation, route}) =>{
     )
   }else{
       return(
-          <PokemonStats user={details.detail}/>
+      <Text>{pokemon.stats[0].base_stat}</Text>
       )
   };
 });
@@ -223,7 +223,7 @@ const Measures = ({ user }) => {
   );
 };
 
-const Stats = ({ user }) => {
+const Stats = ({ }) => {
   return (
     <DetailsProvider>
     <View style={styles.stats}>
