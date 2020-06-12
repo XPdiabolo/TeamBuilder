@@ -41,12 +41,12 @@ export default function App() {
 }
 
 const MainTabNavigator = () => (
-  <Tab.Navigator initialRouteName="PokedexPage" screenOptions={{}}>
+  <Tab.Navigator initialRouteName="Pokedex" screenOptions={{}}>
     
 
-    <Tab.Screen name="PokedexPage" component={Pokedex} options={{tabBarIcon: Pokedex.Icon}} />
+    <Tab.Screen name="Pokedex" component={Pokedex} options={{tabBarIcon: Pokedex.Icon}} />
 
-    <Tab.Screen name="PokeTeamPage" component={Poketeam} options={{tabBarIcon: Poketeam.Icon}} />
+    <Tab.Screen name="Pokemon Team" component={Poketeam} options={{tabBarIcon: Poketeam.Icon}} />
   </Tab.Navigator>
 );
 
