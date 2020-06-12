@@ -214,9 +214,7 @@ const Stats = ({ }) => {
     <DetailsProvider>
     <View style={styles.stats}>
       <Text style={styles.titles}>Type weakness</Text>
-      <View style={styles.stats}>
-            < Image source={require("../assets/TypesTable_2.png")} style={styles.types}/>
-        </View>
+      <View style={styles.detailstable}>< Image source={require("../assets/TypesTable_2.png")} style={styles.types}/></View>
     </View>
     </DetailsProvider>
   );
@@ -305,8 +303,12 @@ const styles = StyleSheet.create({
     marginTop: 15,
     fontSize: 18
   },
-
+  detailstable:{
+    flexDirection: "row",
+  },
   types: {
     flex: 1,
+    marginTop: -151,
+    resizeMode: "contain"
   }
 });
