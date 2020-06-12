@@ -44,9 +44,9 @@ const MainTabNavigator = () => (
   <Tab.Navigator initialRouteName="PokedexPage" screenOptions={{}}>
     
 
-    <Tab.Screen name="PokedexPage" component={Pokedex} />
+    <Tab.Screen name="PokedexPage" component={Pokedex} options={{tabBarIcon: Pokedex.Icon}} />
 
-    <Tab.Screen name="PokeTeamPage" component={Poketeam} />
+    <Tab.Screen name="PokeTeamPage" component={Poketeam} options={{tabBarIcon: Poketeam.Icon}} />
   </Tab.Navigator>
 );
 
