@@ -58,7 +58,7 @@ const Pokemons = ({ user, navigation }) => {
         </View>
         <View style={styles.button2}>
           <Button
-            title="Det"
+            title="Inf"
             onPress={() =>
               navigation.navigate("PokeStats", { pokename: name1 })
             }
@@ -81,7 +81,7 @@ const Pokemons = ({ user, navigation }) => {
         </View>
         <View style={styles.button2}>
           <Button
-            title="Det"
+            title="Inf"
             onPress={() =>
               navigation.navigate("PokeStats", { pokename: name2 })
             }
@@ -104,7 +104,7 @@ const Pokemons = ({ user, navigation }) => {
         </View>
         <View style={styles.button2}>
           <Button
-            title="Det"
+            title="Inf"
             onPress={() =>
               navigation.navigate("PokeStats", { pokename: name3 })
             }
@@ -129,8 +129,8 @@ const Pokemons = ({ user, navigation }) => {
           )}
         </View>
         <View style={styles.button2}>
-          <Button
-            title="Det"
+          <Button  
+            title="Inf"
             onPress={() =>
               navigation.navigate("PokeStats", { pokename: name4 })
             }
@@ -153,7 +153,7 @@ const Pokemons = ({ user, navigation }) => {
         </View>
         <View style={styles.button2}>
           <Button
-            title="Det"
+            title="Inf"
             onPress={() =>
               navigation.navigate("PokeStats", { pokename: name5 })
             }
@@ -176,7 +176,7 @@ const Pokemons = ({ user, navigation }) => {
         </View>
         <View style={styles.button2}>
           <Button
-            title="Det"
+            title="Inf"
             onPress={() =>
               navigation.navigate("PokeStats", { pokename: name6 })
             }
