@@ -308,7 +308,7 @@ const styles = StyleSheet.create({
   },
   types: {
     flex: 1,
-    marginTop: -151,
+    marginTop: -110,
     resizeMode: "contain"
   }
 });
